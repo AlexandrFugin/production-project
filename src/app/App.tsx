@@ -8,7 +8,6 @@ import {Sidebar} from "widgets/Sidebar";
 
 const App = () => {
   const {theme} = useTheme();
-  const bool = true;
 
   return (
     <div className={classNames('app', {}, [theme])}>
