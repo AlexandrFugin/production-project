@@ -3,6 +3,7 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import { defineConfig } from "eslint/config";
+import i18next from 'eslint-plugin-i18next';
 
 export default defineConfig([
   {
@@ -44,6 +45,7 @@ export default defineConfig([
       "react/react-in-jsx-scope": "off",
       "react/jsx-uses-react": "off",
       "no-underscore-dangle": "off",
+      "i18next/no-literal-string": ['error', {markupOnly: true}]
     },
   },
   {
@@ -53,4 +55,5 @@ export default defineConfig([
       "@typescript-eslint/ban-ts-comment": "off",
     },
   },
+  i18next.configs['flat/recommended'],
 ]);
