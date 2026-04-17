@@ -45,7 +45,8 @@ export default defineConfig([
       "react/react-in-jsx-scope": "off",
       "react/jsx-uses-react": "off",
       "no-underscore-dangle": "off",
-      "i18next/no-literal-string": ['error', {markupOnly: true}]
+      "i18next/no-literal-string": ['error', {markupOnly: true}],
+      "max-len": ['error', { "ignoreComments": true }]
     },
   },
   {
