@@ -33,7 +33,8 @@ export default defineConfig([
       "react/jsx-indent": ["error", 2],
       "react/jsx-indent-props": ["error", 2],
       indent: ["error", 2],
-      "react/jsx-filename-extension": ["error", { extensions: [".js", ".jsx", ".tsx"] }],
+      "react/jsx-filename-extension": 
+        ["error", { extensions: [".js", ".jsx", ".tsx"] }],
       "import/no-unresolved": "off",
       "import/prefer-default-export": "off",
       "react/require-default-props": "off",
