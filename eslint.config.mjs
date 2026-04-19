@@ -46,7 +46,13 @@ export default defineConfig([
       "react/react-in-jsx-scope": "off",
       "react/jsx-uses-react": "off",
       "no-underscore-dangle": "off",
-      "i18next/no-literal-string": ['error', {markupOnly: true}],
+      "i18next/no-literal-string": [
+        'error',
+        {
+          markupOnly: true,
+          ignoreAttribute: ['data-testid']
+        }
+      ],
       "max-len": ['error', { "ignoreComments": true, code: 100 }]
     },
   },
@@ -58,4 +64,10 @@ export default defineConfig([
     },
   },
   i18next.configs['flat/recommended'],
+  {
+    files: ['**/src/**/*.test.ts', '**/src/**/*.test.tsx'],
+    rules: {
+      'i18next/no-literal-string': 'off',
+    },
+  },
 ]);
