@@ -10,7 +10,9 @@
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
-    "unit": "jest --config ./config/jest/jest.config.ts"
+    "unit": "jest --config ./config/jest/jest.config.ts",
+    "storybook": "start-storybook -p 6006 -c ./config/storybook",
+    "build-storybook": "build-storybook -c ./config/storybook"
   },
   "keywords": [],
   "author": "",
@@ -61,7 +63,13 @@
     "webpack": "^5.69.1",
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.4"
+    "webpack-dev-server": "^4.7.4",
+    "@storybook/addon-a11y": "6.4.19",
+    "@storybook/addon-actions": "6.4.19",
+    "@storybook/addon-essentials": "6.4.19",
+    "@storybook/builder-webpack5": "6.4.19",
+    "@storybook/manager-webpack5": "6.4.19",
+    "@storybook/react": "6.4.19"
   },
   "dependencies": {
     "i18next": "^21.6.11",
