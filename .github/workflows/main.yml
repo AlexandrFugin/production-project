@@ -3,7 +3,8 @@ run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   push:
     branches: [ master ]
-  pull_request: [ master ]
+  pull_request:
+    branches: [ master ]
 jobs:
   pipeline:
     runs-on: ubuntu-latest
