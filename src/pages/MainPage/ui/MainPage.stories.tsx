@@ -12,6 +12,7 @@ export default {
   },
 } as ComponentMeta<typeof MainPage>;
 
+// @ts-expect-error Legacy Storybook args typing issue in this template
 const Template: ComponentStory<typeof MainPage> = (args) => <MainPage {...args} />;
 
 export const Normal = Template.bind({});
