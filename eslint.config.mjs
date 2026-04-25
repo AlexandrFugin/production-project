@@ -2,6 +2,7 @@ import js from "@eslint/js";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
+import reactHooks from "eslint-plugin-react-hooks";
 import { defineConfig } from "eslint/config";
 import i18next from 'eslint-plugin-i18next';
 
@@ -22,6 +23,9 @@ export default defineConfig([{
   },
 }, tseslint.configs.recommended, pluginReact.configs.flat.recommended, {
   files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+  plugins: {
+    "react-hooks": reactHooks,
+  },
   rules: {
     "no-unused-vars": "warn",
     "react/jsx-indent": ["error", 2],
@@ -40,6 +44,8 @@ export default defineConfig([{
     "react/react-in-jsx-scope": "off",
     "react/jsx-uses-react": "off",
     "no-underscore-dangle": "off",
+    "jsx-a11y/no-static-element-interactions": 'off',
+    "jsx-a11y/click-events-have-key-events": 'off',
     "i18next/no-literal-string": [
       'error',
       {
@@ -47,7 +53,9 @@ export default defineConfig([{
         ignoreAttribute: ['data-testid', 'to']
       }
     ],
-    "max-len": ['error', { "ignoreComments": true, code: 100 }]
+    "max-len": ['error', { "ignoreComments": true, code: 100 }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
   },
 }, {
   files: ["**/*.{ts,tsx,mts,cts}"],
@@ -56,8 +64,9 @@ export default defineConfig([{
     "@typescript-eslint/ban-ts-comment": "off",
   },
 }, i18next.configs['flat/recommended'], {
-  files: ['**/src/**/*.test.ts', '**/src/**/*.test.tsx'],
+  files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
   rules: {
     'i18next/no-literal-string': 'off',
+    'max-len': 'off',
   },
 }]);
