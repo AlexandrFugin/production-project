@@ -27,7 +27,6 @@ export default defineConfig([{
     "react-hooks": reactHooks,
   },
   rules: {
-    "no-unused-vars": "warn",
     "react/jsx-indent": ["error", 2],
     "react/jsx-indent-props": ["error", 2],
     indent: ["error", 2],
@@ -61,6 +60,7 @@ export default defineConfig([{
 }, {
   files: ["**/*.{ts,tsx,mts,cts}"],
   rules: {
+    "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/ban-ts-comment": "off",
   },
