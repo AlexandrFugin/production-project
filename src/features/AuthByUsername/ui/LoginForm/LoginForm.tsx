@@ -12,7 +12,7 @@ import {getLoginUsername} from "../../model/selectors/getLoginUsername/getLoginU
 import {getLoginPassword} from "../../model/selectors/getLoginPassword/getLoginPassword";
 import {getLoginIsLoading} from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
 import {getLoginError} from "../../model/selectors/getLoginError/getLoginError";
-import {DynamicModuleLoader, ReducerList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import {DynamicModuleLoader, ReducersList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 
 export interface LoginFormProps {
@@ -20,7 +20,7 @@ export interface LoginFormProps {
   onSuccess: () => void;
 }
 
-const initialReducers: ReducerList = {
+const initialReducers: ReducersList = {
   loginForm: loginReducer,
 }
 
