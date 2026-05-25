@@ -1,25 +1,53 @@
 {
   "posts": [
-    { "id": "1", "title": "json-server", "autor": "typicode" },
-    { "id": "2", "title": "json-server 1", "autor": "typicode" },
-    { "id": "3", "title": "json-server 2", "autor": "typicode" },
-    { "id": "4", "title": "json-server 3", "autor": "typicode" },
-    { "id": "5", "title": "json-server 4", "autor": "typicode" }
+    {
+      "id": "1",
+      "title": "json-server",
+      "autor": "typicode"
+    },
+    {
+      "id": "2",
+      "title": "json-server 1",
+      "autor": "typicode"
+    },
+    {
+      "id": "3",
+      "title": "json-server 2",
+      "autor": "typicode"
+    },
+    {
+      "id": "4",
+      "title": "json-server 3",
+      "autor": "typicode"
+    },
+    {
+      "id": "5",
+      "title": "json-server 4",
+      "autor": "typicode"
+    }
   ],
   "comments": [
-    { "id": "1", "body": "some comment", "postId": 1 }
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": 1
+    }
   ],
   "users": [
-    { "id": "1", "username": "admin", "password": "123" }
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
+    }
   ],
   "profile": {
-    "first": "Тимур",
-    "lastname": "Ульби",
-    "age": 22,
+    "first": "Тимурdcdcd",
+    "lastname": "Ульбиdcds",
+    "age": 224343,
     "currency": "RUB",
-    "country": "Russia",
-    "city": "Moscow",
+    "country": "Belarus",
+    "city": "Moscowdscds",
     "username": "admin",
-    "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+    "avatar": "https://forum-ru-cdn.warthunder.com/original/3X/a/f/af62d76a2d92797df0711e6a94d319490936f3a1.jpeg"
   }
 }
