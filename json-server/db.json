@@ -30,17 +30,20 @@
     {
       "id": "1",
       "text": "some comment",
-      "postId": 1
+      "articleId": "1",
+      "userId": "1"
     },
     {
       "id": "2",
       "text": "some comment 2",
-      "postId": 1
+      "articleId": "1",
+      "userId": "2"
     },
     {
-      "id": "2",
+      "id": "3",
       "text": "some comment 3",
-      "postId": 1
+      "articleId": "1",
+      "userId": "1"
     }
   ],
   "articles": [
@@ -119,13 +122,15 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://i.pinimg.com/736x/bd/7b/86/bd7b864ad4422494b70251afd0e8e4fa.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://i.pinimg.com/736x/bd/7b/86/bd7b864ad4422494b70251afd0e8e4fa.jpg"
     }
   ],
   "profile": {
