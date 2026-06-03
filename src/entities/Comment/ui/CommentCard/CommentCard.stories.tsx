@@ -4,7 +4,7 @@ import {CommentCard} from './CommentCard';
 import avatar from 'shared/assets/tests/storybook.jpg';
 
 export default {
-  title: 'shared/CommentCard',
+  title: 'entities/Comment/CommentCard',
   component: CommentCard,
   argTypes: {
     backgroundColor: {control: 'color'},
@@ -29,4 +29,13 @@ Normal.args = {
 export const Loading = Template.bind({});
 Loading.args = {
   isLoading: true,
+  comment: {
+    id: '1',
+    text: 'some comment',
+    user: {
+      id: '1',
+      username: 'admin',
+      avatar,
+    },
+  },
 };

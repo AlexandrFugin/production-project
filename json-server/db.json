@@ -44,6 +44,30 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "576",
+      "id": "3PYl305"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "23435",
+      "id": "0PLmnHT"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "yjghng",
+      "id": "dcPAale"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "questions",
+      "id": "LW4HOee"
     }
   ],
   "articles": [
@@ -54,7 +78,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -133,14 +159,28 @@
       "avatar": "https://i.pinimg.com/736x/bd/7b/86/bd7b864ad4422494b70251afd0e8e4fa.jpg"
     }
   ],
-  "profile": {
-    "first": "Тимурdcdcd",
-    "lastname": "Ульбиdcds",
-    "age": 224343,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "fxxvf",
-    "username": "dvffvbf",
-    "avatar": "https://forum-ru-cdn.warthunder.com/original/3X/a/f/af62d76a2d92797df0711e6a94d319490936f3a1.jpeg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Тимурdcdcd",
+      "lastname": "Ульбиdcds",
+      "age": 224343,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "fxxvf",
+      "username": "dvffvbf",
+      "avatar": "https://forum-ru-cdn.warthunder.com/original/3X/a/f/af62d76a2d92797df0711e6a94d319490936f3a1.jpeg"
+    },
+    {
+      "id": "2",
+      "first": "Тимурdc1",
+      "lastname": "Ульбиdcds",
+      "age": 224343,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "fxxvf",
+      "username": "ulbi tv",
+      "avatar": "https://i.pinimg.com/736x/bd/7b/86/bd7b864ad4422494b70251afd0e8e4fa.jpg"
+    }
+  ]
 }
