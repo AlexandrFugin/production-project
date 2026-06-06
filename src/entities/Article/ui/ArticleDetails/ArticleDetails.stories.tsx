@@ -2,11 +2,11 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 
 import {ArticleDetails} from './ArticleDetails';
 import {StoreDecorator} from "shared/config/storybook/StoreDecorator/StoreDecorator";
-import {Article} from "entities/Article";
-import {ArticleBlockType, ArticleType} from "entities/Article/model/types/article";
+import {Article} from "../../model/types/article";
+import {ArticleBlockType, ArticleType} from "../../model/types/article";
 
 export default {
-  title: 'entities/ArticleDetails',
+  title: 'entities/Article/ArticleDetails',
   component: ArticleDetails,
   argTypes: {
     backgroundColor: {control: 'color'},
@@ -20,6 +20,10 @@ const article: Article = {
   "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
   "views": 1022,
   "createdAt": "26.02.2022",
+  "user": {
+    "id": "1",
+    "username": "ulbi tv",
+  },
   "type": [ArticleType.IT],
   "blocks": [
     {

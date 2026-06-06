@@ -1,13 +1,15 @@
-import {classNames} from "shared/lib/classNames/classNames";
-import {useTranslation} from "react-i18next";
-import cls from './ArticlesPage.module.scss'
-import {memo} from "react";
-import {Article, ArticleList, ArticleView} from "entities/Article";
-import {ArticleListItem} from "entities/Article/ui/ArticleListItem/ArticleListItem";
+import {ComponentMeta, ComponentStory} from '@storybook/react';
 
-interface ArticlesPageProps {
-  className?: string;
-}
+import {ArticleList} from './ArticleList';
+import {Article, ArticleView} from "../../model/types/article";
+
+export default {
+  title: 'entities/Article/ArticleList',
+  component: ArticleList,
+  argTypes: {
+    backgroundColor: {control: 'color'},
+  },
+} as ComponentMeta<typeof ArticleList>;
 
 const article = {
   "id": "1",
@@ -139,24 +141,40 @@ const article = {
   ]
 } as Article;
 
-const ArticlesPage = ({className}: ArticlesPageProps) => {
-  const {t} = useTranslation('article');
+const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
 
-  return (
-    <div className={classNames(cls.ArticlesPage, {}, [className])}>
-      <ArticleList
-        isLoading
-        view={ArticleView.BIG}
-        articles={
-          new Array(16)
-            .fill(0).map((item, index) => ({
-              ...article,
-              id: String(index),
-            }))
-        } />
-      {t('ARTICLES PAGE')}
-    </div>
-  );
+export const LoadingBig = Template.bind({});
+LoadingBig.args = {
+  isLoading: true,
+  articles: [],
+  view: ArticleView.BIG,
 };
 
-export default memo(ArticlesPage);
+export const LoadingSmall = Template.bind({});
+LoadingSmall.args = {
+  isLoading: true,
+  articles: [],
+  view: ArticleView.SMALL,
+};
+
+export const ListBig = Template.bind({});
+ListBig.args = {
+  isLoading: false,
+  articles: new Array(3)
+    .fill(0).map((item, index) => ({
+      ...article,
+      id: String(index),
+    })),
+  view: ArticleView.BIG,
+};
+
+export const ListSmall = Template.bind({});
+ListSmall.args = {
+  isLoading: false,
+  articles: new Array(9)
+    .fill(0).map((item, index) => ({
+      ...article,
+      id: String(index),
+    })),
+  view: ArticleView.SMALL,
+};
