@@ -4,6 +4,7 @@ import {ArticleDetails} from './ArticleDetails';
 import {StoreDecorator} from "shared/config/storybook/StoreDecorator/StoreDecorator";
 import {Article} from "../../model/types/article";
 import {ArticleBlockType, ArticleType} from "../../model/types/article";
+import storybookImage from 'shared/assets/tests/storybook.jpg';
 
 export default {
   title: 'entities/Article/ArticleDetails',
@@ -17,7 +18,7 @@ const article: Article = {
   "id": "1",
   "title": "JavaScript news",
   "subtitle": "Что нового в JS за 2022 год?",
-  "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+  "img": storybookImage,
   "views": 1022,
   "createdAt": "26.02.2022",
   "user": {
@@ -53,7 +54,7 @@ const article: Article = {
     {
       "id": "2",
       "type": ArticleBlockType.IMAGE,
-      "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+      "src": storybookImage,
       "title": "Рисунок 1 - скриншот сайта"
     },
     {
@@ -73,7 +74,7 @@ const article: Article = {
     {
       "id": "8",
       "type": ArticleBlockType.IMAGE,
-      "src": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+      "src": storybookImage,
       "title": "Рисунок 1 - скриншот сайта"
     },
     {

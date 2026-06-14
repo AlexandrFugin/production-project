@@ -2,6 +2,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 
 import {ArticleList} from './ArticleList';
 import {Article, ArticleView} from "../../model/types/article";
+import storybookImage from 'shared/assets/tests/storybook.jpg';
 
 export default {
   title: 'entities/Article/ArticleList',
@@ -17,10 +18,10 @@ const article = {
   "user": {
     "id": "1",
     "username": "ulbi tv",
-    "avatar": "https://i.pinimg.com/736x/bd/7b/86/bd7b864ad4422494b70251afd0e8e4fa.jpg",
+    "avatar": storybookImage,
   },
   "subtitle": "Что нового в JS за 2022 год?",
-  "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+  "img": storybookImage,
   "views": 1022,
   "createdAt": "26.02.2022",
   "type": [

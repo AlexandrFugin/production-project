@@ -4,6 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import ArticlesPage from './ArticlesPage';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Article, ArticleView } from 'entities/Article';
+import storybookImage from 'shared/assets/tests/storybook.jpg';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
 
 export default {
@@ -20,7 +21,7 @@ const article: Article = {
   id: '1',
   title: 'JavaScript news',
   subtitle: 'Что нового в JS за 2022 год?',
-  img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+  img: storybookImage,
   views: 1022,
   createdAt: '26.02.2022',
   user: {
@@ -41,6 +42,7 @@ Normal.decorators = [StoreDecorator({
     },
     view: ArticleView.SMALL,
     isLoading: false,
+    _inited: true,
   },
 }, {
   articlesPage: articlesPageReducer,
