@@ -1,4 +1,5 @@
 const fs = require('fs');
+const cors = require('cors');
 const jsonServer = require('json-server');
 const path = require('path');
 
@@ -6,9 +7,9 @@ const server = jsonServer.create();
 
 const router = jsonServer.router(path.resolve(__dirname, 'db.json'));
 
+server.use(cors());
 server.use(jsonServer.defaults({}));
 server.use(jsonServer.bodyParser);
-
 // Нужно для небольшой задержки, чтобы запрос проходил не мгновенно, имитация реального апи
 server.use(async (req, res, next) => {
   await new Promise((res) => {
@@ -40,15 +41,17 @@ server.post('/login', (req, res) => {
 });
 
 // проверяем, авторизован ли пользователь
- 
 server.use((req, res, next) => {
+  if (req.method === 'OPTIONS') {
+    return next();
+  }
+
   if (!req.headers.authorization) {
     return res.status(403).json({ message: 'AUTH ERROR' });
   }
 
   next();
 });
-
 server.use(router);
 
 // запуск сервера

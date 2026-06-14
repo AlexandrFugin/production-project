@@ -1,3 +1,49 @@
+[build]
+  command = "npm run build:prod"
+  publish = "build"
+
+[[redirects]]
+  from = "/login"
+  to = "https://ulbi-production-project-server-2h8166z66-alex-projects-f.vercel.app/login"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/articles/*"
+  to = "https://ulbi-production-project-server-2h8166z66-alex-projects-f.vercel.app/articles/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/articles"
+  to = "https://ulbi-production-project-server-2h8166z66-alex-projects-f.vercel.app/articles"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/comments/*"
+  to = "https://ulbi-production-project-server-2h8166z66-alex-projects-f.vercel.app/comments/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/comments"
+  to = "https://ulbi-production-project-server-2h8166z66-alex-projects-f.vercel.app/comments"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/profile/*"
+  to = "https://ulbi-production-project-server-2h8166z66-alex-projects-f.vercel.app/profile/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/users/*"
+  to = "https://ulbi-production-project-server-2h8166z66-alex-projects-f.vercel.app/users/:splat"
+  status = 200
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
