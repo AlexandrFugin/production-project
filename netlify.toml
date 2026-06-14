@@ -4,43 +4,43 @@
 
 [[redirects]]
   from = "/login"
-  to = "https://ulbi-production-project-server-2h8166z66-alex-projects-f.vercel.app/login"
+  to = "https://ulbi-production-project-server-chi.vercel.app/login"
   status = 200
   force = true
 
 [[redirects]]
   from = "/articles/*"
-  to = "https://ulbi-production-project-server-2h8166z66-alex-projects-f.vercel.app/articles/:splat"
+  to = "https://ulbi-production-project-server-chi.vercel.app/articles/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "/articles"
-  to = "https://ulbi-production-project-server-2h8166z66-alex-projects-f.vercel.app/articles"
+  to = "https://ulbi-production-project-server-chi.vercel.app/articles"
   status = 200
   force = true
 
 [[redirects]]
   from = "/comments/*"
-  to = "https://ulbi-production-project-server-2h8166z66-alex-projects-f.vercel.app/comments/:splat"
+  to = "https://ulbi-production-project-server-chi.vercel.app/comments/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "/comments"
-  to = "https://ulbi-production-project-server-2h8166z66-alex-projects-f.vercel.app/comments"
+  to = "https://ulbi-production-project-server-chi.vercel.app/comments"
   status = 200
   force = true
 
 [[redirects]]
   from = "/profile/*"
-  to = "https://ulbi-production-project-server-2h8166z66-alex-projects-f.vercel.app/profile/:splat"
+  to = "https://ulbi-production-project-server-chi.vercel.app/profile/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "/users/*"
-  to = "https://ulbi-production-project-server-2h8166z66-alex-projects-f.vercel.app/users/:splat"
+  to = "https://ulbi-production-project-server-chi.vercel.app/users/:splat"
   status = 200
   force = true
 
