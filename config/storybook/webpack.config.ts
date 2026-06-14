@@ -8,7 +8,9 @@ export default ({config}: {config: webpack.Configuration}) => {
     build: '',
     html: '',
     entry: '',
-    src: path.resolve(__dirname, '..', '..', 'src')
+    src: path.resolve(__dirname, '..', '..', 'src'),
+    locales: path.resolve(__dirname, '..', '..', 'public', 'locales'),
+    buildLocales: '',
   }
   // `entities/*` иначе уходит в npm-пакет `entities`; голый `entities` (ansi-to-html и др.) не трогаем.
   config.resolve = config.resolve ?? {};
