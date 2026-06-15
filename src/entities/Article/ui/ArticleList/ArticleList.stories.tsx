@@ -10,6 +10,9 @@ export default {
   argTypes: {
     backgroundColor: {control: 'color'},
   },
+  args: {
+    virtualized: false,
+  },
 } as ComponentMeta<typeof ArticleList>;
 
 const article = {

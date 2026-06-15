@@ -33,7 +33,9 @@ const article: Article = {
 };
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+  virtualized: false,
+};
 Normal.decorators = [StoreDecorator({
   articlesPage: {
     ids: [article.id],

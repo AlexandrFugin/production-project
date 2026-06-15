@@ -22,6 +22,7 @@ import {useSearchParams} from 'react-router-dom';
 
 interface ArticlesPageProps {
   className?: string;
+  virtualized?: boolean;
 }
 
 const reducers: ReducersList = {
@@ -158,7 +159,7 @@ const article = {
   ]
 } as Article;
 
-const ArticlesPage = ({className}: ArticlesPageProps) => {
+const ArticlesPage = ({className, virtualized}: ArticlesPageProps) => {
   const {t} = useTranslation('article');
   const dispatch = useAppDispatch();
   const articles = useSelector(getArticles.selectAll);
@@ -186,7 +187,9 @@ const ArticlesPage = ({className}: ArticlesPageProps) => {
           className={cls.list}
           isLoading={isLoading}
           view={view}
-          articles={articles} />
+          articles={articles}
+          virtualized={virtualized}
+        />
       </Page>
     </DynamicModuleLoader>
   );
