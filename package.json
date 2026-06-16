@@ -20,7 +20,7 @@
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "storybook:build": "build-storybook -c ./config/storybook",
+    "storybook:build": "node --max-old-space-size=8192 ./node_modules/@storybook/react/bin/build.js -c ./config/storybook",
     "prepare": "husky install"
   },
   "keywords": [],
@@ -58,6 +58,7 @@
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.6.0",
     "eslint": "^9.39.4",
+    "eslint-plugin-alexandr-plugin": "^0.0.2",
     "eslint-plugin-i18next": "^6.1.4",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",

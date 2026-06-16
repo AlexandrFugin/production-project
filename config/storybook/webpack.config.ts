@@ -46,5 +46,8 @@ export default ({config}: {config: webpack.Configuration}) => {
     __PROJECT__: JSON.stringify('storybook'),
   }));
 
+  config.optimization = config.optimization ?? {};
+  config.optimization.minimize = false;
+
   return config;
 }

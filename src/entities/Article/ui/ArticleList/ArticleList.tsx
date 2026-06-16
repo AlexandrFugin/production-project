@@ -4,7 +4,7 @@ import cls from './ArticleList.module.scss'
 import {HTMLAttributeAnchorTarget, memo} from "react";
 import {Article, ArticleView} from "../../model/types/article";
 import {ArticleListItem} from "../../ui/ArticleListItem/ArticleListItem";
-import {ArticleListItemSkeleton} from "entities/Article/ui/ArticleListItem/ArticleListItemSkeleton";
+import {ArticleListItemSkeleton} from "../ArticleListItem/ArticleListItemSkeleton";
 import {Text, TextSize} from "shared/ui/Text/Text";
 import {List, ListRowProps, WindowScroller} from "react-virtualized";
 import {PAGE_ID} from "widgets/Page/Page";

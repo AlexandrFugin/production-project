@@ -5,6 +5,7 @@ import pluginReact from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import { defineConfig } from "eslint/config";
 import i18next from 'eslint-plugin-i18next';
+import alexandrPlugin from 'eslint-plugin-alexandr-plugin';
 
 export default defineConfig([{
   files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
@@ -27,6 +28,7 @@ export default defineConfig([{
   files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
   plugins: {
     "react-hooks": reactHooks,
+    "alexandr-plugin": alexandrPlugin,
   },
   rules: {
     "react/jsx-indent": ["error", 2],
@@ -59,6 +61,7 @@ export default defineConfig([{
     "react-hooks/exhaustive-deps": "error",
     "no-param-reassign": "off",
     "no-undef": "off",
+    "alexandr-plugin/path-checker": "error",
   },
 }, {
   files: ["**/*.{ts,tsx,mts,cts}"],
