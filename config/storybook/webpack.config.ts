@@ -9,7 +9,7 @@ export default ({config}: {config: webpack.Configuration}) => {
     html: '',
     entry: '',
     src: path.resolve(__dirname, '..', '..', 'src'),
-    locales: path.resolve(__dirname, '..', '..', 'public', 'locales'),
+    locales: '',
     buildLocales: '',
   }
   // `entities/*` иначе уходит в npm-пакет `entities`; голый `entities` (ansi-to-html и др.) не трогаем.
