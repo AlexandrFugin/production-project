@@ -90,6 +90,7 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "@headlessui/react": "^1.6.6",
     "@reduxjs/toolkit": "^1.8.0",
     "@storybook/testing-library": "^0.0.9",
     "axios": "^0.26.1",
