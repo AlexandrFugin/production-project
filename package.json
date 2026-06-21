@@ -21,7 +21,8 @@
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "storybook:build": "node --max-old-space-size=8192 ./node_modules/@storybook/react/bin/build.js -c ./config/storybook",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "generate:slice": "node ./scripts/createSlice/index.js"
   },
   "keywords": [],
   "author": "",
