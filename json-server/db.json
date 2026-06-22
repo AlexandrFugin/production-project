@@ -122,6 +122,12 @@
       "userId": "1",
       "text": "bfbfbftb",
       "id": "L1Y09xC"
+    },
+    {
+      "articleId": "4",
+      "userId": "1",
+      "text": "dvdfvd",
+      "id": "tvieGM_"
     }
   ],
   "articles": [
@@ -649,8 +655,8 @@
   "profile": [
     {
       "id": "1",
-      "first": "Тимурdcdcd",
-      "lastname": "Ульбиdcds",
+      "first": "Тимурdcd",
+      "lastname": "Ульбиd",
       "age": 224343,
       "currency": "EUR",
       "country": "Belarus",

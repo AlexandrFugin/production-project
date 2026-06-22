@@ -1,19 +1,18 @@
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import {Article} from 'entities/Article';
-import {ArticleBlockType, ArticleType} from 'entities/Article/model/types/article';
-import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import {ArticleDetailsPageHeader} from './ArticleDetailsPageHeader';
+import { Article, ArticleType } from 'entities/Article';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+
+import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 
 export default {
-  title: 'shared/ArticleDetailsPageHeader',
+  title: 'pages/ArticleDetailsPage/ArticleDetailsPageHeader',
   component: ArticleDetailsPageHeader,
   argTypes: {
-    backgroundColor: {control: 'color'},
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof ArticleDetailsPageHeader>;
-
-const Template: ComponentStory<typeof ArticleDetailsPageHeader> = (args) => <ArticleDetailsPageHeader {...args} />;
 
 const article: Article = {
   id: '1',
@@ -25,17 +24,12 @@ const article: Article = {
   type: [ArticleType.IT],
   user: {
     id: '1',
-    username: 'ulbi tv',
+    username: 'Ulbi tv',
   },
-  blocks: [
-    {
-      id: '1',
-      type: ArticleBlockType.TEXT,
-      title: 'Заголовок этого блока',
-      paragraphs: ['Текст статьи'],
-    },
-  ],
+  blocks: [],
 };
+
+const Template: ComponentStory<typeof ArticleDetailsPageHeader> = (args) => <ArticleDetailsPageHeader {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {};
@@ -46,7 +40,7 @@ Normal.decorators = [StoreDecorator({
   user: {
     authData: {
       id: '1',
-      username: 'ulbi tv',
+      username: 'Ulbi tv',
     },
   },
 })];

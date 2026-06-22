@@ -8,7 +8,7 @@ import storybookImage from 'shared/assets/tests/storybook.jpg';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
 
 export default {
-  title: 'pages/ArticlesPage',
+  title: 'pages/ArticlesPage/ArticlesPage',
   component: ArticlesPage,
   argTypes: {
     backgroundColor: { control: 'color' },
