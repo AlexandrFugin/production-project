@@ -61,6 +61,7 @@ export default {
     ["jest-html-reporters", {
       publicPath: "<rootDir>/reports/unit",
       filename: 'report.html',
+      // включение/отключение автозапуска отчета в браузере
       openReport: true,
       inlineSource: true,
     }]
