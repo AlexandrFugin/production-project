@@ -1,9 +1,13 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import withMock from 'storybook-addon-mock';
 
 import { Article } from 'entities/Article';
 import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import storybookImage from 'shared/assets/tests/storybook.jpg';
+import 'features/articleRecommendationsList/api/articleRecommendationsApi';
+import { articleDetailsPageReducer } from '../../model/slices';
 import ArticleDetailsPage from './ArticleDetailsPage';
 
 export default {
@@ -12,6 +16,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [withMock],
 } as ComponentMeta<typeof ArticleDetailsPage>;
 
 const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />;
@@ -56,10 +61,87 @@ const article: Article = {
   ],
 };
 
+const recommendationArticle: Article = {
+  id: '2',
+  title: 'JavaScript news JavaScript news JavaScript news',
+  user: {
+    id: '1',
+    username: 'ulbi tv',
+    avatar: storybookImage,
+  },
+  subtitle: 'Что нового в JS за 2022 год?',
+  img: storybookImage,
+  views: 1022,
+  createdAt: '26.02.2022',
+  type: [ArticleType.IT, ArticleType.SCIENCE, ArticleType.ECONOMICS],
+  blocks: [],
+};
+
+const recommendations = new Array(3).fill(0).map((_, index) => ({
+  ...recommendationArticle,
+  id: String(index + 2),
+}));
+
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [StoreDecorator({
-  articleDetails: {
-    data: article,
-  },
-})];
+Normal.decorators = [
+  StoreDecorator({
+    articleDetails: {
+      data: article,
+    },
+    articleDetailsPage: {
+      comments: {
+        ids: ['1', '2'],
+        entities: {
+          1: {
+            id: '1',
+            text: 'hello world',
+            user: { id: '1', username: 'Vasya' },
+          },
+          2: {
+            id: '2',
+            text: 'comment 2',
+            user: { id: '2', username: 'Petya' },
+          },
+        },
+        isLoading: false,
+      },
+    },
+    user: {
+      authData: {
+        id: '1',
+        username: 'Ulbi tv',
+      },
+    },
+  }, {
+    articleDetailsPage: articleDetailsPageReducer,
+  }),
+];
+Normal.parameters = {
+  route: '/articles/1',
+  mockData: [
+    {
+      url: `${__API__}/articles?_limit=3`,
+      method: 'GET',
+      status: 200,
+      response: recommendations,
+    },
+    {
+      url: `${__API__}/comments?articleId=1&_expand=user`,
+      method: 'GET',
+      status: 200,
+      response: [
+        {
+          id: '1',
+          text: 'hello world',
+          user: { id: '1', username: 'Vasya' },
+        },
+        {
+          id: '2',
+          text: 'comment 2',
+          user: { id: '2', username: 'Petya' },
+        },
+      ],
+    },
+  ],
+};

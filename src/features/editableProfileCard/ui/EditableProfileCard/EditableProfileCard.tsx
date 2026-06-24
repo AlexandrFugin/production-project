@@ -33,7 +33,7 @@ const reducers: ReducersList = {
 }
 interface EditableProfileCardProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 // eslint-disable-next-line react/display-name

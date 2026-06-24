@@ -5,6 +5,7 @@ module.exports = {
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
+    'storybook-addon-mock/register',
   ],
   framework: '@storybook/react',
   core: {

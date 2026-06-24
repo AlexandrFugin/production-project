@@ -17,9 +17,4 @@ const Template: ComponentStory<typeof EditableProfileCardHeader> = (args) => (
 
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [StoreDecorator({
-  profile: {
-    readonly: true,
-    isLoading: false,
-  },
-})];
+Normal.decorators = [StoreDecorator({})];
