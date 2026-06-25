@@ -3,8 +3,8 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {ArticleDetails} from './ArticleDetails';
 import {StoreDecorator} from "shared/config/storybook/StoreDecorator/StoreDecorator";
 import {Article} from "../../model/types/article";
-import {ArticleBlockType, ArticleType} from "../../model/types/article";
 import storybookImage from 'shared/assets/tests/storybook.jpg';
+import {ArticleType, ArticleBlockType} from "../../model/consts/articleConsts";
 
 export default {
   title: 'entities/Article/ArticleDetails',

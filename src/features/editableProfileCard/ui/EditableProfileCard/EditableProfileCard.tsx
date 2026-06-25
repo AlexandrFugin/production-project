@@ -21,7 +21,7 @@ import {
 import {ProfileCard} from "entities/Profile";
 import {fetchProfileData} from "../../model/services/fetchProfileData/fetchProfileData";
 import {profileActions, profileReducer} from "../../model/slice/profileSlice";
-import {ValidateProfileError} from "../../index";
+import {ValidateProfileError} from "../../model/consts/consts";
 import {DynamicModuleLoader, ReducersList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import {
   EditableProfileCardHeader

@@ -1,6 +1,5 @@
 import {StateSchema} from "app/providers/StoreProvider";
 import {getArticleDetailsData} from "./articleDetailsData";
-import {ArticleBlockType, ArticleType} from "../../types/article";
 
 describe("getArticleDetailsData.test", () => {
   test("should return data", () => {
