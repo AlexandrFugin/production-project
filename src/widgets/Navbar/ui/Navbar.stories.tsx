@@ -1,8 +1,10 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react';
+import withMock from 'storybook-addon-mock';
 
 import {ThemeDecorator} from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import {StoreDecorator} from "shared/config/storybook/StoreDecorator/StoreDecorator";
 import {Theme} from "app/providers/ThemeProvider";
+import 'entities/Notification/api/notificationApi';
 import {Navbar} from "./Navbar";
 
 export default {
@@ -25,6 +27,19 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
 
 export const AuthNavbar = Template.bind({});
 AuthNavbar.args = {};
-AuthNavbar.decorators = [StoreDecorator({
-  user: {authData: {}}
-})]
+AuthNavbar.decorators = [
+  withMock,
+  StoreDecorator({
+    user: {authData: { id: '1', username: 'admin' }},
+  }),
+];
+AuthNavbar.parameters = {
+  mockData: [
+    {
+      url: `${__API__}/notifications`,
+      method: 'GET',
+      status: 200,
+      response: [],
+    },
+  ],
+};

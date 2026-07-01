@@ -17,7 +17,7 @@ Normal.decorators = [StoreDecorator({
     authData: {
       id: '1',
       username: 'admin',
-      avatar: 'https://i.pravatar.cc/150',
+      avatar: '',
     },
   },
 })];

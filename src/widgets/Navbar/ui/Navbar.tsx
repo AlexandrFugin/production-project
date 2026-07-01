@@ -4,8 +4,8 @@ import cls from './Navbar.module.scss'
 import {useTranslation} from "react-i18next";
 import {Button, ButtonTheme} from "shared/ui/Button/Button";
 import {LoginModal} from "features/AuthByUsername";
-import {useDispatch, useSelector} from "react-redux";
-import {getUserAuthData, isUserAdmin, isUserManager, userActions} from "entities/User";
+import {useSelector} from "react-redux";
+import {getUserAuthData} from "entities/User";
 import {Text, TextTheme} from "shared/ui/Text/Text";
 import {AppLink, AppLinkTheme} from "shared/ui/AppLink/AppLink";
 import {RoutePath} from "shared/config/routeConfig/routeConfig";
@@ -15,6 +15,8 @@ import {HStack} from "shared/ui/Stack";
 import {Icon} from "shared/ui/Icon/Icon";
 import {NotificationButton} from "features/notificationButton";
 import {AvatarDropdown} from "features/avatarDropdown";
+import {Drawer} from "shared/ui/Drawer/Drawer";
+import {NotificationList} from "entities/Notification";
 
 interface NavbarProps {
   className?: string;
@@ -28,11 +30,11 @@ export const Navbar = memo(({className}: NavbarProps) => {
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
-  },[])
+  },[]);
 
   const onShowModal = useCallback(() => {
     setIsAuthModal(true);
-  },[])
+  },[]);
 
   if (authData) {
     return (
