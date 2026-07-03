@@ -1,6 +1,6 @@
 import {classNames} from "../../classNames/classNames";
-import {Portal} from "shared/ui/Portal/Portal";
-import {Overlay} from "shared/ui/Overlay/Overlay";
+import {Portal} from "@/shared/ui/Portal/Portal";
+import {Overlay} from "@/shared/ui/Overlay/Overlay";
 import {MutableRefObject, useCallback, useEffect, useRef, useState} from "react";
 
 interface useModalProps {

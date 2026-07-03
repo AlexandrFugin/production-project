@@ -1,7 +1,7 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import withMock from 'storybook-addon-mock';
 
-import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import {Notification} from '../../model/types/notification';
 import '../../api/notificationApi';
 

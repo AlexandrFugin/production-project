@@ -2,7 +2,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 
 import {ArticleListItem} from './ArticleListItem';
 import {Article} from "../../model/types/article";
-import storybookImage from 'shared/assets/tests/storybook.jpg';
+import storybookImage from '@/shared/assets/tests/storybook.jpg';
 import {ArticleView} from "../../model/consts/articleConsts";
 
 export default {

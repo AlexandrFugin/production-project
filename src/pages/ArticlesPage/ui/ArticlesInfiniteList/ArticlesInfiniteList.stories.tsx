@@ -2,8 +2,8 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ArticlesInfiniteList } from './ArticlesInfiniteList';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ArticleView } from 'entities/Article';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ArticleView } from '@/entities/Article';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
 
 export default {

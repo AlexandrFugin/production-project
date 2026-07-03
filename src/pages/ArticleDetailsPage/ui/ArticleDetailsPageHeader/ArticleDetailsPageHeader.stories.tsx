@@ -1,9 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Article, ArticleType } from 'entities/Article';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import storybookImage from 'shared/assets/tests/storybook.jpg';
+import { Article, ArticleType } from '@/entities/Article';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import storybookImage from '@/shared/assets/tests/storybook.jpg';
 
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 

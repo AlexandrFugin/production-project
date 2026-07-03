@@ -21,6 +21,7 @@ export default ({config}: {config: webpack.Configuration}) => {
   const entitiesFsdRoot = path.join(paths.src, 'entities');
   config.resolve.alias = {
     ...(config.resolve.alias as Record<string, string | string[] | false> | undefined),
+    '@': paths.src,
     'entities/': `${entitiesFsdRoot}/`,
   };
 

@@ -1,7 +1,7 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 
 import {CommentCard} from './CommentCard';
-import avatar from 'shared/assets/tests/storybook.jpg';
+import avatar from '@/shared/assets/tests/storybook.jpg';
 
 export default {
   title: 'entities/Comment/CommentCard',

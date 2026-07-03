@@ -1,4 +1,4 @@
-import {createReducerManager} from "app/providers/StoreProvider/config/reducerManager";
+import {createReducerManager} from "@/app/providers/StoreProvider/config/reducerManager";
 import {useCallback, useRef} from "react";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
