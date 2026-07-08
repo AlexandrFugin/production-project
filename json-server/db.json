@@ -754,6 +754,17 @@
       "city": "Moscow",
       "username": "ulbi tv",
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    },
+    {
+      "id": "3",
+      "first": "profile",
+      "lastname": "my",
+      "age": 32,
+      "currency": "EUR",
+      "country": "Ukraine",
+      "city": "Moscow",
+      "username": "my",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
   "article-ratings": [
@@ -817,7 +828,7 @@
     },
     {
       "id": "2",
-      "rate": 4,
+      "rate": 3,
       "feedback": "Хорошая статья",
       "userId": "1",
       "profileId": "2"
