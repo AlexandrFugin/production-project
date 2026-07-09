@@ -2,7 +2,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 import withMock from 'storybook-addon-mock';
 
 import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import '@/features/articleRating/api/articleRatingApi';
+import '../../api/articleRatingApi';
 
 import ArticleRating from './ArticleRating';
 

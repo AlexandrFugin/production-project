@@ -61,7 +61,7 @@ export default defineConfig([{
     "react-hooks/exhaustive-deps": "error",
     "no-param-reassign": "off",
     "no-undef": "off",
-    "alexandr-plugin/path-checker": "error",
+    "alexandr-plugin/path-checker": ["error", {alias: '@'}],
   },
 }, {
   files: ["**/*.{ts,tsx,mts,cts}"],
