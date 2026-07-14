@@ -62,6 +62,7 @@ export default defineConfig([{
     "no-param-reassign": "off",
     "no-undef": "off",
     "alexandr-plugin/path-checker": ["error", {alias: '@'}],
+    "alexandr-plugin/public-api-imports": ["error", {alias: '@'}],
   },
 }, {
   files: ["**/*.{ts,tsx,mts,cts}"],

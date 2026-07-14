@@ -11,7 +11,7 @@ import {useInitialEffect} from "@/shared/lib/hooks/useInitialEffect/useInitialEf
 import {fetchCommentsByArticleId} from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import {addCommentForArticle} from "../../model/services/addCommentForArticle/addCommentForArticle";
 import {Button} from "@/shared/ui/Button/Button";
-import {Page} from "@/widgets/Page/Page";
+import {Page} from "@/widgets/Page";
 import {articleDetailsPageReducer} from "../../model/slices";
 import {ArticleDetailsPageHeader} from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 import {VStack} from "@/shared/ui/Stack";

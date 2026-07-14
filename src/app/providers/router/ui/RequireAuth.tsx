@@ -3,7 +3,7 @@ import {getUserAuthData, UserRole} from "@/entities/User";
 import {useLocation, Navigate} from "react-router-dom";
 import {RoutePath} from "@/shared/config/routeConfig/routeConfig";
 import {useMemo} from "react";
-import {getUserRoles} from "@/entities/User/model/selectors/roleSelectors";
+import {getUserRoles} from "@/entities/User";
 
 interface RequireAuthProps {
   children: JSX.Element;

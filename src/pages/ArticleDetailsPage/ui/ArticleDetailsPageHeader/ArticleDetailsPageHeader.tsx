@@ -6,7 +6,7 @@ import {RoutePath} from "@/shared/config/routeConfig/routeConfig";
 import {useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {getUserAuthData} from "@/entities/User";
-import {getArticleDetailsData} from "@/entities/Article/model/selectors/articleDetailsData/articleDetailsData";
+import {getArticleDetailsData} from "@/entities/Article";
 import {getCanEditArticle} from "../../model/selectors/article";
 import {HStack} from "@/shared/ui/Stack";
 
