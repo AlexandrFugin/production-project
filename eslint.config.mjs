@@ -62,7 +62,13 @@ export default defineConfig([{
     "no-param-reassign": "off",
     "no-undef": "off",
     "alexandr-plugin/path-checker": ["error", {alias: '@'}],
-    "alexandr-plugin/public-api-imports": ["error", {alias: '@'}],
+    "alexandr-plugin/public-api-imports": [
+      "error",
+      {
+        alias: '@',
+        testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx']
+      }
+    ],
   },
 }, {
   files: ["**/*.{ts,tsx,mts,cts}"],
