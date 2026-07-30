@@ -62,6 +62,13 @@ export default defineConfig([{
     "no-param-reassign": "off",
     "no-undef": "off",
     "alexandr-plugin/path-checker": ["error", {alias: '@'}],
+    "alexandr-plugin/layer-imports": [
+      "error",
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing']
+      }
+    ],
     "alexandr-plugin/public-api-imports": [
       "error",
       {
