@@ -1,9 +1,9 @@
 import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from './LoginForm.module.scss'
 import {useTranslation} from "react-i18next";
-import {Button, ButtonTheme} from "@/shared/ui/Button/Button";
-import {Text, TextTheme} from "@/shared/ui/Text/Text";
-import {Input} from "@/shared/ui/Input/Input";
+import {Button, ButtonTheme} from "@/shared/ui/Button";
+import {Text, TextTheme} from "@/shared/ui/Text";
+import {Input} from "@/shared/ui/Input";
 import {useDispatch, useSelector} from "react-redux";
 import {memo, useCallback} from "react";
 import {loginActions, loginReducer} from "../../model/slice/loginSlice";

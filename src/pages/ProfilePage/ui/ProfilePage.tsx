@@ -3,10 +3,10 @@ import {DynamicModuleLoader} from "@/shared/lib/components/DynamicModuleLoader/D
 import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {Currency} from "@/entities/Currency";
 import {Country} from "@/entities/Country";
-import {Text} from "@/shared/ui/Text/Text";
+import {Text} from "@/shared/ui/Text";
 import {useInitialEffect} from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import {Page} from "@/widgets/Page";
-import {VStack} from "@/shared/ui/Stack/VStack/VStack";
+import {VStack} from "@/shared/ui/Stack";
 import {EditableProfileCard} from "@/features/editableProfileCard";
 import {useParams} from "react-router-dom";
 import {useTranslation} from "react-i18next";

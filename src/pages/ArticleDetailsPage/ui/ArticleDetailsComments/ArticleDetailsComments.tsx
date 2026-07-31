@@ -1,7 +1,7 @@
 import {classNames} from "@/shared/lib/classNames/classNames";
 import {useTranslation} from "react-i18next";
 import {memo, Suspense, useCallback} from "react";
-import {Text, TextSize} from "@/shared/ui/Text/Text";
+import {Text, TextSize} from "@/shared/ui/Text";
 import {AddCommentForm} from "@/features/addCommentForm";
 import {CommentList} from "@/entities/Comment";
 import {getArticleComments} from "../../model/slices/articleDetailsCommentsSlice";
@@ -13,7 +13,7 @@ import {
 } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import {useInitialEffect} from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import {VStack} from "@/shared/ui/Stack";
-import {Loader} from "@/shared/ui/Loader/Loader";
+import {Loader} from "@/shared/ui/Loader";
 
 interface ArticleDetailsCommentsProps {
   className?: string;
