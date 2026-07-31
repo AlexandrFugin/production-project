@@ -1,4 +1,4 @@
-import React, {FC, ReactNode, useMemo, useState} from 'react';
+import React, { ReactNode, useMemo, useState} from 'react';
 import {ThemeContext}
   from '../../../../shared/lib/context/ThemeContext';
 import {Theme} from "@/shared/const/theme";

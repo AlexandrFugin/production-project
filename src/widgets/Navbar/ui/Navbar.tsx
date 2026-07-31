@@ -8,14 +8,9 @@ import {useSelector} from "react-redux";
 import {getUserAuthData} from "@/entities/User";
 import {Text, TextTheme} from "@/shared/ui/Text";
 import {AppLink, AppLinkTheme} from "@/shared/ui/AppLink";
-import {Dropdown} from "@/shared/ui/Popups";
-import {Avatar} from "@/shared/ui/Avatar";
 import {HStack} from "@/shared/ui/Stack";
-import {Icon} from "@/shared/ui/Icon";
 import {NotificationButton} from "@/features/notificationButton";
 import {AvatarDropdown} from "@/features/avatarDropdown";
-import {Drawer} from "@/shared/ui/Drawer";
-import {NotificationList} from "@/entities/Notification";
 import {RoutePath} from "@/shared/const/router";
 
 interface NavbarProps {

@@ -3,6 +3,7 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
+import unusedImports from "eslint-plugin-unused-imports";
 import { defineConfig } from "eslint/config";
 import i18next from 'eslint-plugin-i18next';
 import alexandrPlugin from 'eslint-plugin-alexandr-plugin';
@@ -29,10 +30,21 @@ export default defineConfig([{
   plugins: {
     "react-hooks": reactHooks,
     "alexandr-plugin": alexandrPlugin,
+    "unused-imports": unusedImports,
   },
   rules: {
     "react/jsx-indent": ["error", 2],
     "react/jsx-indent-props": ["error", 2],
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        vars: "all",
+        varsIgnorePattern: "^_",
+        args: "after-used",
+        argsIgnorePattern: "^_",
+      },
+    ],
     indent: ["error", 2],
     "react/jsx-filename-extension": 
       ["error", { extensions: [".js", ".jsx", ".tsx"] }],
@@ -81,7 +93,7 @@ export default defineConfig([{
   files: ["**/*.{ts,tsx,mts,cts}"],
   rules: {
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/ban-ts-comment": "off",
   },
 }, i18next.configs['flat/recommended'], {

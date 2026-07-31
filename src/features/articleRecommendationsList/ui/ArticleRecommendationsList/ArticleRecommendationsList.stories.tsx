@@ -3,8 +3,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Article, ArticleType } from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { rtkApi } from '@/shared/api/rtkApi';
-import { QueryStatus } from '@reduxjs/toolkit/query';
 import storybookImage from '@/shared/assets/tests/storybook.jpg';
 import '../../api/articleRecommendationsApi';
 
