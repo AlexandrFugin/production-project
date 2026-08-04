@@ -3,9 +3,16 @@ module.exports = {
     '../../src/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [
-    '@storybook/addon-essentials',
-    '@storybook/addon-a11y',
+    '@storybook/addon-links',
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        backgrounds: false,
+      },
+    },
+    '@storybook/addon-interactions',
     'storybook-addon-mock/register',
+    'storybook-addon-themes',
   ],
   framework: '@storybook/react',
   core: {
