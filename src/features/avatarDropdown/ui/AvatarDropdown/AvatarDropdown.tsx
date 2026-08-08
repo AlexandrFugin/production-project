@@ -5,7 +5,7 @@ import {Dropdown} from "@/shared/ui/Popups";
 import {Avatar} from "@/shared/ui/Avatar";
 import {getUserAuthData, isUserAdmin, isUserManager, userActions} from "@/entities/User";
 import {useDispatch, useSelector} from "react-redux";
-import {getRoutePanel, getRouteProfile} from "@/shared/const/router";
+import {getRouteAdmin, getRouteProfile} from "@/shared/const/router";
 
 interface AvatarDropdownProps {
   className?: string;
@@ -37,7 +37,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
       items={[
         ...(isAdminPanelAvailable? [{
           content: t('Админка'),
-          href: getRoutePanel(),
+          href: getRouteAdmin(),
         }] : []),
         {
           content: t('Профиль'),
