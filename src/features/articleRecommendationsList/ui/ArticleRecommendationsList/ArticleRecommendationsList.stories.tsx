@@ -7,7 +7,6 @@ import storybookImage from '@/shared/assets/tests/storybook.jpg';
 import '../../api/articleRecommendationsApi';
 
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
-import withMock from "storybook-addon-mock";
 
 export default {
   title: 'features/ArticleRecommendationsList',
@@ -15,7 +14,6 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  decorators: [withMock]
 } as ComponentMeta<typeof ArticleRecommendationsList>;
 
 const article: Article = {

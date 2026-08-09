@@ -1,5 +1,4 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import withMock from 'storybook-addon-mock';
 
 import {ThemeDecorator} from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import {StoreDecorator} from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
@@ -27,7 +26,6 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
 export const AuthNavbar = Template.bind({});
 AuthNavbar.args = {};
 AuthNavbar.decorators = [
-  withMock,
   StoreDecorator({
     user: {authData: { id: '1', username: 'admin' }},
   }),

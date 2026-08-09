@@ -7,13 +7,14 @@ import {CommentList} from "@/entities/Comment";
 import {getArticleComments} from "../../model/slices/articleDetailsCommentsSlice";
 import {getArticleCommentsIsLoading} from "../../model/selectors/comments";
 import {addCommentForArticle} from "../../model/services/addCommentForArticle/addCommentForArticle";
-import {useDispatch, useSelector} from "react-redux";
+import { useSelector} from "react-redux";
 import {
   fetchCommentsByArticleId
 } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import {useInitialEffect} from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import {VStack} from "@/shared/ui/Stack";
 import {Loader} from "@/shared/ui/Loader";
+import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 
 interface ArticleDetailsCommentsProps {
   className?: string;
@@ -24,7 +25,7 @@ interface ArticleDetailsCommentsProps {
 export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
   const {className, id} = props;
   const {t} = useTranslation();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const comments = useSelector(getArticleComments.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
 
