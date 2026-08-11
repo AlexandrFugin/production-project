@@ -701,6 +701,12 @@
       "userId": "1",
       "text": "привет",
       "id": "FdJcy4g"
+    },
+    {
+      "articleId": "15",
+      "userId": "4",
+      "text": "плохо говно ()статья 1022",
+      "id": "jq-XRu7"
     }
   ],
   "users": [
@@ -774,6 +780,17 @@
       "city": "Moscow",
       "username": "my",
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    },
+    {
+      "id": "4",
+      "first": "test",
+      "lastname": "user",
+      "age": 465,
+      "currency": "EUR",
+      "country": "Ukraine",
+      "city": "Moscow",
+      "username": "testuser",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
   "article-ratings": [
@@ -825,6 +842,13 @@
       "rate": 4,
       "feedback": "dfbgbgvnhg12213",
       "id": "IH8cCxs"
+    },
+    {
+      "userId": "4",
+      "articleId": "15",
+      "rate": 5,
+      "feedback": "",
+      "id": "XchuM2K"
     }
   ],
   "profile-ratings": [
@@ -841,6 +865,13 @@
       "feedback": "Хорошая статья",
       "userId": "1",
       "profileId": "2"
+    },
+    {
+      "userId": "4",
+      "profileId": "4",
+      "rate": 5,
+      "feedback": "",
+      "id": "wjJGVkv"
     }
   ]
 }
