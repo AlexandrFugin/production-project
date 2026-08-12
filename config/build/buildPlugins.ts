@@ -39,9 +39,12 @@ export function buildPlugins({ paths, isDev, apiUrl, project }: BuildOptions): w
   if (isDev) {
     plugins.push(new ReactRefreshWebpackPlugin());
     plugins.push(new webpack.HotModuleReplacementPlugin());
-    plugins.push(new BundleAnalyzerPlugin({
-      openAnalyzer: false,
-    }));
+    // Cypress CT поднимает свой webpack — analyzer уже слушает 8888 от npm start
+    if (!process.env.CYPRESS) {
+      plugins.push(new BundleAnalyzerPlugin({
+        openAnalyzer: false,
+      }));
+    }
   }
 
   if (isProd) {
