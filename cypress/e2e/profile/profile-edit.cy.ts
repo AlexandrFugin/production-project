@@ -3,10 +3,10 @@ let profileId = '';
 describe('Пользователь заходит на страницу профиля', () => {
   beforeEach(() => {
     cy.visit('');
-    cy.login().then(data => {
+    cy.login().then((data) => {
       profileId = data.id;
-      cy.visit(`profile/${data.id}`)
-    })
+      cy.visit(`profile/${data.id}`);
+    });
   });
   afterEach(() => {
     cy.resetProfile(profileId);
@@ -21,4 +21,4 @@ describe('Пользователь заходит на страницу проф
     cy.getByTestId('ProfileCard.firstname').should('have.value', newName);
     cy.getByTestId('ProfileCard.lastname').should('have.value', newLastname);
   });
-})
+});

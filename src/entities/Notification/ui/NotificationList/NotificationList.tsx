@@ -1,11 +1,11 @@
-import {classNames} from "@/shared/lib/classNames/classNames";
-import {useTranslation} from "react-i18next";
-import cls from './NotificationList.module.scss'
-import {memo} from "react";
-import {useNotifications} from "../../api/notificationApi";
-import {VStack} from "@/shared/ui/Stack";
-import {NotificationItem} from "../../ui/NotificationItem/NotificationItem";
-import {Skeleton} from "@/shared/ui/Skeleton";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useTranslation } from 'react-i18next';
+import cls from './NotificationList.module.scss';
+import { memo } from 'react';
+import { useNotifications } from '../../api/notificationApi';
+import { VStack } from '@/shared/ui/Stack';
+import { NotificationItem } from '../../ui/NotificationItem/NotificationItem';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface NotificationListProps {
   className?: string;
@@ -13,8 +13,8 @@ interface NotificationListProps {
 
 // eslint-disable-next-line react/display-name
 export const NotificationList = memo((props: NotificationListProps) => {
-  const {className} = props;
-  const {t} = useTranslation();
+  const { className } = props;
+  const { t } = useTranslation();
   const { data, isLoading } = useNotifications(null, {
     pollingInterval: 5000,
   });

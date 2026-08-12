@@ -1,13 +1,13 @@
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import {EditableProfileCard} from './EditableProfileCard';
-import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { EditableProfileCard } from './EditableProfileCard';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
   title: 'features/editableProfileCard',
   component: EditableProfileCard,
   argTypes: {
-    backgroundColor: {control: 'color'},
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof EditableProfileCard>;
 

@@ -1,6 +1,6 @@
-import {classNames, Mods} from "@/shared/lib/classNames/classNames";
-import cls from './Button.module.scss'
-import { ButtonHTMLAttributes, memo, ReactNode} from "react";
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import cls from './Button.module.scss';
+import { ButtonHTMLAttributes, memo, ReactNode } from 'react';
 
 export enum ButtonTheme {
   CLEAR = 'clear',
@@ -64,7 +64,7 @@ export const Button = memo((props: ButtonProps) => {
     [cls[size]]: true,
     [cls.disabled]: disabled,
     [cls.fullWidth]: fullWidth,
-  }
+  };
 
   return (
     <button

@@ -5,7 +5,7 @@ import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/Dynami
 import { articleDetailsReducer } from '@/entities/Article/testing';
 import { addCommentFormReducer } from '@/features/addCommentForm/testing';
 import { profileReducer } from '@/features/editableProfileCard/testing';
-import {articleDetailsPageReducer} from '@/pages/ArticleDetailsPage/testing';
+import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing';
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
@@ -15,12 +15,15 @@ const defaultAsyncReducers: ReducersList = {
   articleDetailsPage: articleDetailsPageReducer,
 };
 
-export const StoreDecorator = (
-  state: DeepPartial<StateSchema>,
-  asyncReducers?: ReducersList,
-  // eslint-disable-next-line react/display-name -- фабрика декоратора Storybook
-) => (StoryComponent: Story) => (
-  <StoreProvider initialState={state} asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}>
-    <StoryComponent />
-  </StoreProvider>
-);
+export const StoreDecorator =
+  (state: DeepPartial<StateSchema>, asyncReducers?: ReducersList) =>
+  // eslint-disable-next-line react/display-name
+  (StoryComponent: Story) =>
+    (
+      <StoreProvider
+        initialState={state}
+        asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}
+      >
+        <StoryComponent />
+      </StoreProvider>
+    );

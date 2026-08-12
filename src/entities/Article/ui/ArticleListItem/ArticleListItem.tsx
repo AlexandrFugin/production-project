@@ -1,20 +1,23 @@
-import {classNames} from "@/shared/lib/classNames/classNames";
-import {useTranslation} from "react-i18next";
-import cls from './ArticleListItem.module.scss'
-import {HTMLAttributeAnchorTarget, memo} from "react";
-import {Article, ArticleTextBlock} from "../../model/types/article";
-import {Text} from "@/shared/ui/Text";
-import {Icon} from "@/shared/ui/Icon";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useTranslation } from 'react-i18next';
+import cls from './ArticleListItem.module.scss';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
+import { Article, ArticleTextBlock } from '../../model/types/article';
+import { Text } from '@/shared/ui/Text';
+import { Icon } from '@/shared/ui/Icon';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
-import {Card} from "@/shared/ui/Card";
-import {Avatar} from "@/shared/ui/Avatar";
-import {Button, ButtonTheme} from "@/shared/ui/Button";
-import {ArticleTextBlockComponent} from "../../ui/ArticleTextBlockComponent/ArticleTextBlockComponent";
-import {AppLink} from "@/shared/ui/AppLink";
-import {ArticleBlockType, ArticleView} from "../../model/consts/articleConsts";
-import {getRouteArticleDetails} from "@/shared/const/router";
-import {AppImage} from "@/shared/ui/AppImage";
-import {Skeleton} from "@/shared/ui/Skeleton";
+import { Card } from '@/shared/ui/Card';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { ArticleTextBlockComponent } from '../../ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { AppLink } from '@/shared/ui/AppLink';
+import {
+  ArticleBlockType,
+  ArticleView,
+} from '../../model/consts/articleConsts';
+import { getRouteArticleDetails } from '@/shared/const/router';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ArticleListItemProps {
   className?: string;
@@ -25,20 +28,20 @@ interface ArticleListItemProps {
 
 // eslint-disable-next-line react/display-name
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-  const {className, article, view, target} = props;
-  const {t} = useTranslation();
+  const { className, article, view, target } = props;
+  const { t } = useTranslation();
 
-  const types = <Text text={article.type.join(', ')} className={cls.types} />
+  const types = <Text text={article.type.join(', ')} className={cls.types} />;
   const views = (
     <>
       <Text text={String(article.views)} className={cls.views} />
       <Icon Svg={EyeIcon} />
     </>
-  )
+  );
 
   if (view === ArticleView.BIG) {
     const textBlock = article.blocks.find(
-      (block) => block.type === ArticleBlockType.TEXT
+      (block) => block.type === ArticleBlockType.TEXT,
     ) as ArticleTextBlock;
 
     return (
@@ -56,18 +59,18 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           {types}
           <AppImage
             fallback={<Skeleton width={'100%'} height={250} />}
-            src={article.img} 
-            className={cls.img} 
+            src={article.img}
+            className={cls.img}
             alt={article.title}
           />
           {textBlock && (
-            <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
+            <ArticleTextBlockComponent
+              block={textBlock}
+              className={cls.textBlock}
+            />
           )}
           <div className={cls.footer}>
-            <AppLink
-              target={target}
-              to={getRouteArticleDetails(article.id)}
-            >
+            <AppLink target={target} to={getRouteArticleDetails(article.id)}>
               <Button theme={ButtonTheme.OUTLINE}>
                 {`${t('Читать далее')}...`}
               </Button>
@@ -76,7 +79,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           </div>
         </Card>
       </div>
-    )
+    );
   }
 
   return (

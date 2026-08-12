@@ -1,13 +1,13 @@
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import {Notification} from '../../model/types/notification';
-import {NotificationItem} from './NotificationItem';
+import { Notification } from '../../model/types/notification';
+import { NotificationItem } from './NotificationItem';
 
 export default {
   title: 'entities/Notification/NotificationItem',
   component: NotificationItem,
   argTypes: {
-    backgroundColor: {control: 'color'},
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof NotificationItem>;
 
@@ -18,7 +18,9 @@ const notification: Notification = {
   href: 'https://youtube.com',
 };
 
-const Template: ComponentStory<typeof NotificationItem> = (args) => <NotificationItem {...args} />;
+const Template: ComponentStory<typeof NotificationItem> = (args) => (
+  <NotificationItem {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {

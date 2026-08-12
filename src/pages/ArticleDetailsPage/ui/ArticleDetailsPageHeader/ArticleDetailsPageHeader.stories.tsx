@@ -30,18 +30,22 @@ const article: Article = {
   blocks: [],
 };
 
-const Template: ComponentStory<typeof ArticleDetailsPageHeader> = (args) => <ArticleDetailsPageHeader {...args} />;
+const Template: ComponentStory<typeof ArticleDetailsPageHeader> = (args) => (
+  <ArticleDetailsPageHeader {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [StoreDecorator({
-  articleDetails: {
-    data: article,
-  },
-  user: {
-    authData: {
-      id: '1',
-      username: 'Ulbi tv',
+Normal.decorators = [
+  StoreDecorator({
+    articleDetails: {
+      data: article,
     },
-  },
-})];
+    user: {
+      authData: {
+        id: '1',
+        username: 'Ulbi tv',
+      },
+    },
+  }),
+];

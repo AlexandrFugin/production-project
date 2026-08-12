@@ -1,21 +1,23 @@
-import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {action} from '@storybook/addon-actions';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
-import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import {StarRating} from './StarRating';
-import {Theme} from "@/shared/const/theme";
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { StarRating } from './StarRating';
+import { Theme } from '@/shared/const/theme';
 
 export default {
   title: 'shared/StarRating',
   component: StarRating,
   argTypes: {
-    backgroundColor: {control: 'color'},
-    size: {control: 'number'},
-    selectedStars: {control: 'number'},
+    backgroundColor: { control: 'color' },
+    size: { control: 'number' },
+    selectedStars: { control: 'number' },
   },
 } as ComponentMeta<typeof StarRating>;
 
-const Template: ComponentStory<typeof StarRating> = (args) => <StarRating {...args} />;
+const Template: ComponentStory<typeof StarRating> = (args) => (
+  <StarRating {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {

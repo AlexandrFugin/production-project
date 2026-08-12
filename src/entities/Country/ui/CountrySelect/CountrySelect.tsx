@@ -1,7 +1,7 @@
-import {useTranslation} from "react-i18next";
-import {memo, useCallback} from "react";
-import {Country} from "../../model/types/country";
-import {ListBox} from "@/shared/ui/Popups";
+import { useTranslation } from 'react-i18next';
+import { memo, useCallback } from 'react';
+import { Country } from '../../model/types/country';
+import { ListBox } from '@/shared/ui/Popups';
 
 interface CountrySelectProps {
   className?: string;
@@ -11,26 +11,24 @@ interface CountrySelectProps {
 }
 
 const option = [
-  {value: Country.Russia, content: Country.Russia},
-  {value: Country.Armenia, content: Country.Armenia},
-  {value: Country.Belarus, content: Country.Belarus},
-  {value: Country.Ukraine, content: Country.Ukraine},
-  {value: Country.Kazakhstan, content: Country.Kazakhstan},
+  { value: Country.Russia, content: Country.Russia },
+  { value: Country.Armenia, content: Country.Armenia },
+  { value: Country.Belarus, content: Country.Belarus },
+  { value: Country.Ukraine, content: Country.Ukraine },
+  { value: Country.Kazakhstan, content: Country.Kazakhstan },
 ];
 
 // eslint-disable-next-line react/display-name
 export const CountrySelect = memo((props: CountrySelectProps) => {
-  const {
-    className,
-    value,
-    onChange,
-    readonly,
-  } = props;
-  const {t} = useTranslation();
+  const { className, value, onChange, readonly } = props;
+  const { t } = useTranslation();
 
-  const onChangeHandler = useCallback((value: string) => {
-    onChange?.(value as Country);
-  }, [onChange]);
+  const onChangeHandler = useCallback(
+    (value: string) => {
+      onChange?.(value as Country);
+    },
+    [onChange],
+  );
 
   return (
     <ListBox

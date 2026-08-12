@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import {Article, ArticleType, ArticleBlockType} from '@/entities/Article';
+import { Article, ArticleType, ArticleBlockType } from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import storybookImage from '@/shared/assets/tests/storybook.jpg';
 import { articleDetailsPageReducer } from '../../model/slices';
@@ -15,7 +15,9 @@ export default {
   },
 } as ComponentMeta<typeof ArticleDetailsPage>;
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />;
+const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
+  <ArticleDetailsPage {...args} />
+);
 
 const article: Article = {
   id: '1',
@@ -81,37 +83,40 @@ const recommendations = new Array(3).fill(0).map((_, index) => ({
 export const Normal = Template.bind({});
 Normal.args = {};
 Normal.decorators = [
-  StoreDecorator({
-    articleDetails: {
-      data: article,
-    },
-    articleDetailsPage: {
-      comments: {
-        ids: ['1', '2'],
-        entities: {
-          1: {
-            id: '1',
-            text: 'hello world',
-            user: { id: '1', username: 'Vasya' },
+  StoreDecorator(
+    {
+      articleDetails: {
+        data: article,
+      },
+      articleDetailsPage: {
+        comments: {
+          ids: ['1', '2'],
+          entities: {
+            1: {
+              id: '1',
+              text: 'hello world',
+              user: { id: '1', username: 'Vasya' },
+            },
+            2: {
+              id: '2',
+              text: 'comment 2',
+              user: { id: '2', username: 'Petya' },
+            },
           },
-          2: {
-            id: '2',
-            text: 'comment 2',
-            user: { id: '2', username: 'Petya' },
-          },
+          isLoading: false,
         },
-        isLoading: false,
+      },
+      user: {
+        authData: {
+          id: '1',
+          username: 'Ulbi tv',
+        },
       },
     },
-    user: {
-      authData: {
-        id: '1',
-        username: 'Ulbi tv',
-      },
+    {
+      articleDetailsPage: articleDetailsPageReducer,
     },
-  }, {
-    articleDetailsPage: articleDetailsPageReducer,
-  }),
+  ),
 ];
 Normal.parameters = {
   route: '/articles/1',

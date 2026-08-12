@@ -1,6 +1,6 @@
 describe('Пользователь заходит на страницу со списком статей', () => {
   beforeEach(() => {
-    cy.login().then(data => {
+    cy.login().then((data) => {
       cy.visit('articles');
     });
   });
@@ -9,7 +9,7 @@ describe('Пользователь заходит на страницу со с�
     cy.getByTestId('ArticleListItem').should('have.length.greaterThan', 3);
   });
   it('На стабах (фикстурах)', () => {
-    cy.intercept('GET', '**/articles?*', {fixture: 'articles.json'})
+    cy.intercept('GET', '**/articles?*', { fixture: 'articles.json' });
     cy.getByTestId('ArticleList').should('exist');
     cy.getByTestId('ArticleListItem').should('have.length.greaterThan', 3);
   });
@@ -18,4 +18,4 @@ describe('Пользователь заходит на страницу со с�
     cy.getByTestId('ArticleListItem').should('have.length.greaterThan', 3);
     cy.get('dsvfdvbf').should('exist');
   });
-})
+});

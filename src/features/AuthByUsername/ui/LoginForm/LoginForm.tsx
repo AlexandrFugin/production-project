@@ -1,19 +1,22 @@
-import {classNames} from "@/shared/lib/classNames/classNames";
-import cls from './LoginForm.module.scss'
-import {useTranslation} from "react-i18next";
-import {Button, ButtonTheme} from "@/shared/ui/Button";
-import {Text, TextTheme} from "@/shared/ui/Text";
-import {Input} from "@/shared/ui/Input";
-import { useSelector} from "react-redux";
-import {memo, useCallback} from "react";
-import {loginActions, loginReducer} from "../../model/slice/loginSlice";
-import {loginByUsername} from "../../model/services/loginByUsername/loginByUsername";
-import {getLoginUsername} from "../../model/selectors/getLoginUsername/getLoginUsername";
-import {getLoginPassword} from "../../model/selectors/getLoginPassword/getLoginPassword";
-import {getLoginIsLoading} from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
-import {getLoginError} from "../../model/selectors/getLoginError/getLoginError";
-import {DynamicModuleLoader, ReducersList} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './LoginForm.module.scss';
+import { useTranslation } from 'react-i18next';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Text, TextTheme } from '@/shared/ui/Text';
+import { Input } from '@/shared/ui/Input';
+import { useSelector } from 'react-redux';
+import { memo, useCallback } from 'react';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
+import {
+  DynamicModuleLoader,
+  ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 export interface LoginFormProps {
   className?: string;
@@ -22,27 +25,33 @@ export interface LoginFormProps {
 
 const initialReducers: ReducersList = {
   loginForm: loginReducer,
-}
+};
 
 // eslint-disable-next-line react/display-name
-const LoginForm = memo(({className, onSuccess}: LoginFormProps) => {
-  const {t} = useTranslation();
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const username = useSelector(getLoginUsername);
   const password = useSelector(getLoginPassword);
   const isLoading = useSelector(getLoginIsLoading);
   const error = useSelector(getLoginError);
 
-  const onChangeUsername = useCallback((value: string) => {
-    dispatch(loginActions.setUsername(value))
-  }, [dispatch]);
+  const onChangeUsername = useCallback(
+    (value: string) => {
+      dispatch(loginActions.setUsername(value));
+    },
+    [dispatch],
+  );
 
-  const onChangePassword = useCallback((value: string) => {
-    dispatch(loginActions.setPassword(value))
-  }, [dispatch]);
+  const onChangePassword = useCallback(
+    (value: string) => {
+      dispatch(loginActions.setPassword(value));
+    },
+    [dispatch],
+  );
 
   const onLoginClick = useCallback(async () => {
-    const result = await dispatch(loginByUsername({username, password}));
+    const result = await dispatch(loginByUsername({ username, password }));
     console.log(result);
     if (result.meta.requestStatus === 'fulfilled') {
       onSuccess();
@@ -50,13 +59,15 @@ const LoginForm = memo(({className, onSuccess}: LoginFormProps) => {
   }, [onSuccess, dispatch, password, username]);
 
   return (
-    <DynamicModuleLoader
-      removeAfterUnmount
-      reducers={initialReducers}
-    >
+    <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
       <div className={classNames(cls.LoginForm, {}, [className])}>
         <Text title={t('Форма авторизации')} />
-        {error && <Text text={t('Вы ввели неверный логин или пароль')} theme={TextTheme.ERROR} />}
+        {error && (
+          <Text
+            text={t('Вы ввели неверный логин или пароль')}
+            theme={TextTheme.ERROR}
+          />
+        )}
         <Input
           className={cls.input}
           type="text"

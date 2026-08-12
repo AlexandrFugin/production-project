@@ -1,6 +1,6 @@
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import '../../api/profileRatingApi';
 
 import ProfileRating from './ProfileRating';
@@ -9,11 +9,13 @@ export default {
   title: 'features/ProfileRating',
   component: ProfileRating,
   argTypes: {
-    backgroundColor: {control: 'color'},
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof ProfileRating>;
 
-const Template: ComponentStory<typeof ProfileRating> = (args) => <ProfileRating {...args} />;
+const Template: ComponentStory<typeof ProfileRating> = (args) => (
+  <ProfileRating {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {

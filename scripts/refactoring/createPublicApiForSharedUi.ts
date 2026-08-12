@@ -1,5 +1,5 @@
 import { Project } from 'ts-morph';
-import path from "path";
+import path from 'path';
 
 const project = new Project({});
 
@@ -16,17 +16,19 @@ function isAbsolute(value: string) {
   return layers.some((layer) => value.startsWith(layer));
 }
 
-componentsDirs?.forEach(directory => {
+componentsDirs?.forEach((directory) => {
   const indexFilePath = `${directory.getPath()}/index.ts`;
   const indexFile = directory.getSourceFile(indexFilePath);
 
   if (!indexFile) {
-    const sourceCode = `export * from './${directory.getBaseName()}'`
-    const file = directory.createSourceFile(indexFilePath, sourceCode, {overwrite: true});
+    const sourceCode = `export * from './${directory.getBaseName()}'`;
+    const file = directory.createSourceFile(indexFilePath, sourceCode, {
+      overwrite: true,
+    });
 
     file.save();
   }
-})
+});
 
 files.forEach((sourceFile) => {
   const importDeclarations = sourceFile.getImportDeclarations();

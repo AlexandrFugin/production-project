@@ -1,6 +1,6 @@
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import '../../api/articleRatingApi';
 
 import ArticleRating from './ArticleRating';
@@ -9,11 +9,13 @@ export default {
   title: 'features/ArticleRating',
   component: ArticleRating,
   argTypes: {
-    backgroundColor: {control: 'color'},
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof ArticleRating>;
 
-const Template: ComponentStory<typeof ArticleRating> = (args) => <ArticleRating {...args} />;
+const Template: ComponentStory<typeof ArticleRating> = (args) => (
+  <ArticleRating {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {
@@ -38,7 +40,7 @@ Normal.parameters = {
       response: [
         {
           rate: 4,
-        }
+        },
       ],
     },
   ],

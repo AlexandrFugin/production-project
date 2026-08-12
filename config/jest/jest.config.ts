@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-import path from "path";
+import path from 'path';
 
 export default {
   // All imported modules in your tests should be mocked automatically
@@ -24,31 +24,16 @@ export default {
   // Automatically clear mock calls, instances and results before every test
   clearMocks: true,
   // The test environment that will be used for testing
-  testEnvironment: "jsdom",
+  testEnvironment: 'jsdom',
   // An array of regexp pattern strings used to skip coverage collection
-  coveragePathIgnorePatterns: [
-    "\\\\node_modules\\\\"
-  ],
+  coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
   // An array of file extensions your modules use
-  moduleFileExtensions: [
-    "js",
-    "jsx",
-    "ts",
-    "tsx",
-    "json",
-    "node"
-  ],
+  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
   // An array of directory names to be searched recursively up from the requiring module's location
-  moduleDirectories: [
-    "node_modules"
-  ],
-  modulePaths: [
-    '<rootDir>src',
-  ],
+  moduleDirectories: ['node_modules'],
+  modulePaths: ['<rootDir>src'],
   // The glob patterns Jest uses to detect test files
-  testMatch: [
-    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
-  ],
+  testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
   // The root directory that Jest should scan for tests and modules within
   rootDir: '../../',
   setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
@@ -57,16 +42,19 @@ export default {
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     '^@/(.*)$': '<rootDir>src/$1',
   },
-  "reporters": [
-    "default",
-    ["jest-html-reporters", {
-      publicPath: "<rootDir>/reports/unit",
-      filename: 'report.html',
-      // включение/отключение автозапуска отчета в браузере
-      openReport: true,
-      inlineSource: true,
-    }]
-  ]
+  reporters: [
+    'default',
+    [
+      'jest-html-reporters',
+      {
+        publicPath: '<rootDir>/reports/unit',
+        filename: 'report.html',
+        // включение/отключение автозапуска отчета в браузере
+        openReport: true,
+        inlineSource: true,
+      },
+    ],
+  ],
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,

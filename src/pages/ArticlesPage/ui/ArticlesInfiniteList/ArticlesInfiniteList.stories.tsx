@@ -20,14 +20,19 @@ const Template: ComponentStory<typeof ArticlesInfiniteList> = (args) => (
 
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [StoreDecorator({
-  articlesPage: {
-    ids: [],
-    entities: {},
-    view: ArticleView.SMALL,
-    isLoading: false,
-    _inited: true,
-  },
-}, {
-  articlesPage: articlesPageReducer,
-})];
+Normal.decorators = [
+  StoreDecorator(
+    {
+      articlesPage: {
+        ids: [],
+        entities: {},
+        view: ArticleView.SMALL,
+        isLoading: false,
+        _inited: true,
+      },
+    },
+    {
+      articlesPage: articlesPageReducer,
+    },
+  ),
+];

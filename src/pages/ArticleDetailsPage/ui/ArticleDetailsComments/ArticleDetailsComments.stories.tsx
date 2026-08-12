@@ -24,25 +24,30 @@ export const Normal = Template.bind({});
 Normal.args = {
   id: '1',
 };
-Normal.decorators = [StoreDecorator({
-  articleDetailsPage: {
-    comments: {
-      ids: ['1', '2'],
-      entities: {
-        1: {
-          id: '1',
-          text: 'hello world',
-          user: { id: '1', username: 'Vasya' },
-        },
-        2: {
-          id: '2',
-          text: 'comment 2',
-          user: { id: '2', username: 'Petya' },
+Normal.decorators = [
+  StoreDecorator(
+    {
+      articleDetailsPage: {
+        comments: {
+          ids: ['1', '2'],
+          entities: {
+            1: {
+              id: '1',
+              text: 'hello world',
+              user: { id: '1', username: 'Vasya' },
+            },
+            2: {
+              id: '2',
+              text: 'comment 2',
+              user: { id: '2', username: 'Petya' },
+            },
+          },
+          isLoading: false,
         },
       },
-      isLoading: false,
     },
-  },
-}, {
-  articleDetailsPage: articleDetailsPageReducer,
-})];
+    {
+      articleDetailsPage: articleDetailsPageReducer,
+    },
+  ),
+];

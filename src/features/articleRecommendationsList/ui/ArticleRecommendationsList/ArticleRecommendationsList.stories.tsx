@@ -37,7 +37,9 @@ const articles = new Array(3).fill(0).map((_, index) => ({
   id: String(index),
 }));
 
-const Template: ComponentStory<typeof ArticleRecommendationsList> = (args) => <ArticleRecommendationsList {...args} />;
+const Template: ComponentStory<typeof ArticleRecommendationsList> = (args) => (
+  <ArticleRecommendationsList {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};
@@ -49,10 +51,10 @@ Normal.parameters = {
       method: 'GET',
       status: 200,
       response: [
-        {...article, id: '1'},
-        {...article, id: '2'},
-        {...article, id: '3'},
-      ]
-    }
-  ]
-}
+        { ...article, id: '1' },
+        { ...article, id: '2' },
+        { ...article, id: '3' },
+      ],
+    },
+  ],
+};

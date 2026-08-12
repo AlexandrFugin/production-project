@@ -1,9 +1,9 @@
-import {classNames} from "@/shared/lib/classNames/classNames";
-import cls from './NotificationItem.module.scss'
-import {memo} from "react";
-import {Notification} from "../../model/types/notification";
-import {Card, CardTheme} from "@/shared/ui/Card";
-import {Text} from "@/shared/ui/Text";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './NotificationItem.module.scss';
+import { memo } from 'react';
+import { Notification } from '../../model/types/notification';
+import { Card, CardTheme } from '@/shared/ui/Card';
+import { Text } from '@/shared/ui/Text';
 
 interface NotificationItemProps {
   className?: string;
@@ -12,7 +12,7 @@ interface NotificationItemProps {
 
 // eslint-disable-next-line react/display-name
 export const NotificationItem = memo((props: NotificationItemProps) => {
-  const {className, item} = props;
+  const { className, item } = props;
 
   const content = (
     <Card
@@ -25,10 +25,15 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
 
   if (item.href) {
     return (
-      <a className={cls.link} target={"_blank"} href={item.href} rel="noreferrer">
+      <a
+        className={cls.link}
+        target={'_blank'}
+        href={item.href}
+        rel="noreferrer"
+      >
         {content}
       </a>
-    )
+    );
   }
 
   return content;

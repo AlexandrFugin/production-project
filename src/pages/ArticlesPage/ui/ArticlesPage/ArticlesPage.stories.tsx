@@ -15,7 +15,9 @@ export default {
   },
 } as ComponentMeta<typeof ArticlesPage>;
 
-const Template: ComponentStory<typeof ArticlesPage> = (args) => <ArticlesPage {...args} />;
+const Template: ComponentStory<typeof ArticlesPage> = (args) => (
+  <ArticlesPage {...args} />
+);
 
 const article: Article = {
   id: '1',
@@ -36,16 +38,21 @@ export const Normal = Template.bind({});
 Normal.args = {
   virtualized: false,
 };
-Normal.decorators = [StoreDecorator({
-  articlesPage: {
-    ids: [article.id],
-    entities: {
-      [article.id]: article,
+Normal.decorators = [
+  StoreDecorator(
+    {
+      articlesPage: {
+        ids: [article.id],
+        entities: {
+          [article.id]: article,
+        },
+        view: ArticleView.SMALL,
+        isLoading: false,
+        _inited: true,
+      },
     },
-    view: ArticleView.SMALL,
-    isLoading: false,
-    _inited: true,
-  },
-}, {
-  articlesPage: articlesPageReducer,
-})];
+    {
+      articlesPage: articlesPageReducer,
+    },
+  ),
+];

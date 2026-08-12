@@ -1,6 +1,6 @@
-import {classNames} from "@/shared/lib/classNames/classNames";
-import cls from './Icon.module.scss'
-import React, {memo} from "react";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './Icon.module.scss';
+import React, { memo } from 'react';
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {
   className?: string;
@@ -10,11 +10,13 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
 
 // eslint-disable-next-line react/display-name
 export const Icon = memo((props: IconProps) => {
-  const {className, Svg, inverted, ...otherProps} = props;
+  const { className, Svg, inverted, ...otherProps } = props;
 
   return (
     <Svg
-      className={classNames(inverted ? cls.inverted : cls.Icon, {}, [className])}
+      className={classNames(inverted ? cls.inverted : cls.Icon, {}, [
+        className,
+      ])}
       {...otherProps}
     />
   );

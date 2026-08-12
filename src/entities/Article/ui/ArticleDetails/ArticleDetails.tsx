@@ -1,30 +1,30 @@
-import {classNames} from "@/shared/lib/classNames/classNames";
-import {useTranslation} from "react-i18next";
-import cls from './ArticleDetails.module.scss'
-import {DynamicModuleLoader, ReducersList} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import {articleDetailsReducer} from '../../model/slice/articleDetailsSlice';
-import {memo, useCallback, useEffect} from "react";
-import {fetchArticleById} from "../../model/services/fetchArticleById/fetchArticleById";
-import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import {useSelector} from "react-redux";
-import {getArticleDetailsData} from "../../model/selectors/articleDetailsData/articleDetailsData";
-import {getArticleDetailsError} from "../../model/selectors/articleDetailsError/articleDetailsError";
-import {Text, TextAlign, TextSize} from '@/shared/ui/Text'
-import {Skeleton} from "@/shared/ui/Skeleton";
-import {Avatar} from "@/shared/ui/Avatar";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useTranslation } from 'react-i18next';
+import cls from './ArticleDetails.module.scss';
+import {
+  DynamicModuleLoader,
+  ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
+import { memo, useCallback, useEffect } from 'react';
+import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useSelector } from 'react-redux';
+import { getArticleDetailsData } from '../../model/selectors/articleDetailsData/articleDetailsData';
+import { getArticleDetailsError } from '../../model/selectors/articleDetailsError/articleDetailsError';
+import { Text, TextAlign, TextSize } from '@/shared/ui/Text';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { Avatar } from '@/shared/ui/Avatar';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
-import {Icon} from "@/shared/ui/Icon";
-import {ArticleBlock} from "../../model/types/article";
-import {
-  getArticleDetailsIsLoading
-} from "../../model/selectors/articleDetailsIsLoading/articleDetailsIsLoading";
-import {HStack, VStack} from "@/shared/ui/Stack";
-import {ArticleBlockType} from "../../model/consts/articleConsts";
-import {ArticleCodeBlockComponent} from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
-import {ArticleTextBlockComponent} from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import {ArticleImageBlockComponent} from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
-
+import { Icon } from '@/shared/ui/Icon';
+import { ArticleBlock } from '../../model/types/article';
+import { getArticleDetailsIsLoading } from '../../model/selectors/articleDetailsIsLoading/articleDetailsIsLoading';
+import { HStack, VStack } from '@/shared/ui/Stack';
+import { ArticleBlockType } from '../../model/consts/articleConsts';
+import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 
 interface ArticleDetailsProps {
   className?: string;
@@ -33,12 +33,12 @@ interface ArticleDetailsProps {
 
 const reducers: ReducersList = {
   articleDetails: articleDetailsReducer,
-}
+};
 
 // eslint-disable-next-line react/display-name
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
-  const {className, id} = props;
-  const {t} = useTranslation('article-details');
+  const { className, id } = props;
+  const { t } = useTranslation('article-details');
   const dispatch = useAppDispatch();
   const isLoading = useSelector(getArticleDetailsIsLoading);
   const article = useSelector(getArticleDetailsData);
@@ -46,28 +46,34 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
-    case ArticleBlockType.CODE:
-      return <ArticleCodeBlockComponent
-        key={block.id}
-        className={cls.block}
-        block={block}
-      />
-    case ArticleBlockType.TEXT:
-      return <ArticleTextBlockComponent
-        key={block.id}
-        className={cls.block}
-        block={block}
-      />
-    case ArticleBlockType.IMAGE:
-      return <ArticleImageBlockComponent
-        key={block.id}
-        className={cls.block}
-        block={block}
-      />
-    default:
-      return null;
+      case ArticleBlockType.CODE:
+        return (
+          <ArticleCodeBlockComponent
+            key={block.id}
+            className={cls.block}
+            block={block}
+          />
+        );
+      case ArticleBlockType.TEXT:
+        return (
+          <ArticleTextBlockComponent
+            key={block.id}
+            className={cls.block}
+            block={block}
+          />
+        );
+      case ArticleBlockType.IMAGE:
+        return (
+          <ArticleImageBlockComponent
+            key={block.id}
+            className={cls.block}
+            block={block}
+          />
+        );
+      default:
+        return null;
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
     if (__PROJECT__ !== 'storybook') {
@@ -80,20 +86,25 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   if (isLoading) {
     content = (
       <>
-        <Skeleton className={cls.avatar} width={200} height={200} border={'50%'} />
+        <Skeleton
+          className={cls.avatar}
+          width={200}
+          height={200}
+          border={'50%'}
+        />
         <Skeleton className={cls.title} width={300} height={32} />
         <Skeleton className={cls.skeleton} width={600} height={24} />
         <Skeleton className={cls.skeleton} width={'100%'} height={200} />
         <Skeleton className={cls.skeleton} width={'100%'} height={200} />
       </>
-    )
+    );
   } else if (error) {
     content = (
       <Text
         align={TextAlign.CENTER}
         title={t('Произошла ошибка при загрузке статьи')}
       />
-    )
+    );
   } else {
     content = (
       <>
@@ -118,12 +129,16 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         </VStack>
         {article?.blocks.map(renderBlock)}
       </>
-    )
+    );
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
-      <VStack gap={'16'} max className={classNames(cls.ArticleDetails, {}, [className])}>
+      <VStack
+        gap={'16'}
+        max
+        className={classNames(cls.ArticleDetails, {}, [className])}
+      >
         {content}
       </VStack>
     </DynamicModuleLoader>

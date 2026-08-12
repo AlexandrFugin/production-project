@@ -1,16 +1,22 @@
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import {ListBox} from './ListBox';
+import { ListBox } from './ListBox';
 
 export default {
   title: 'shared/ListBox',
   component: ListBox,
   decorators: [
-    Story => <div style={{padding: 100}}><Story /></div>
-  ]
+    (Story) => (
+      <div style={{ padding: 100 }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as ComponentMeta<typeof ListBox>;
 
-const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args} />;
+const Template: ComponentStory<typeof ListBox> = (args) => (
+  <ListBox {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {
@@ -18,7 +24,7 @@ Normal.args = {
   items: [
     { content: 'dvfnhm fdvdd', value: '123' },
     { content: 'dvdcdcdrghhyj', value: '1234' },
-  ]
+  ],
 };
 
 export const topLeft = Template.bind({});
@@ -28,7 +34,7 @@ topLeft.args = {
   items: [
     { content: 'dvfnhm fdvdd', value: '123' },
     { content: 'dvdcdcdrghhyj', value: '1234' },
-  ]
+  ],
 };
 
 export const topRight = Template.bind({});
@@ -38,7 +44,7 @@ topRight.args = {
   items: [
     { content: 'dvfnhm fdvdd', value: '123' },
     { content: 'dvdcdcdrghhyj', value: '1234' },
-  ]
+  ],
 };
 
 export const bottomLeft = Template.bind({});
@@ -48,7 +54,7 @@ bottomLeft.args = {
   items: [
     { content: 'dvfnhm fdvdd', value: '123' },
     { content: 'dvdcdcdrghhyj', value: '1234' },
-  ]
+  ],
 };
 
 export const bottomRight = Template.bind({});
@@ -58,5 +64,5 @@ bottomRight.args = {
   items: [
     { content: 'dvfnhm fdvdd', value: '123' },
     { content: 'dvdcdcdrghhyj', value: '1234' },
-  ]
+  ],
 };

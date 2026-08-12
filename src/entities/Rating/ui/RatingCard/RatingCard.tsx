@@ -1,14 +1,14 @@
-import {useTranslation} from "react-i18next";
-import {memo, useCallback, useState} from "react";
-import {Card} from "@/shared/ui/Card";
-import {HStack, VStack} from "@/shared/ui/Stack";
-import {Text} from "@/shared/ui/Text";
-import {StarRating} from "@/shared/ui/StarRating";
-import {Modal} from "@/shared/ui/Modal";
-import {Input} from "@/shared/ui/Input";
-import {Button, ButtonTheme} from "@/shared/ui/Button";
-import {BrowserView, MobileView} from "react-device-detect";
-import {Drawer} from "@/shared/ui/Drawer";
+import { useTranslation } from 'react-i18next';
+import { memo, useCallback, useState } from 'react';
+import { Card } from '@/shared/ui/Card';
+import { HStack, VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
+import { StarRating } from '@/shared/ui/StarRating';
+import { Modal } from '@/shared/ui/Modal';
+import { Input } from '@/shared/ui/Input';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { BrowserView, MobileView } from 'react-device-detect';
+import { Drawer } from '@/shared/ui/Drawer';
 
 interface RatingCardProps {
   className?: string;
@@ -31,20 +31,23 @@ export const RatingCard = memo((props: RatingCardProps) => {
     title,
     rate = 0,
   } = props;
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [starsCount, setStarsCount] = useState(rate);
   const [feedback, setFeedback] = useState('');
 
-  const onSelectStar = useCallback((selectedStarsCount: number) => {
-    setStarsCount(selectedStarsCount);
-    if (hasFeedback) {
+  const onSelectStar = useCallback(
+    (selectedStarsCount: number) => {
+      setStarsCount(selectedStarsCount);
+      if (hasFeedback) {
+        setIsModalOpen(true);
+      } else {
+        onAccept?.(selectedStarsCount);
+      }
       setIsModalOpen(true);
-    } else {
-      onAccept?.(selectedStarsCount);
-    }
-    setIsModalOpen(true);
-  }, [hasFeedback, onAccept]);
+    },
+    [hasFeedback, onAccept],
+  );
 
   const acceptHandle = useCallback(() => {
     setIsModalOpen(false);
@@ -58,9 +61,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
 
   const modalContent = (
     <>
-      <Text
-        title={feedbackTitle}
-      />
+      <Text title={feedbackTitle} />
       <Input
         value={feedback}
         onChange={setFeedback}
@@ -71,14 +72,14 @@ export const RatingCard = memo((props: RatingCardProps) => {
   );
 
   return (
-    <Card
-      className={className}
-      max
-      data-testid="RatingCard"
-    >
+    <Card className={className} max data-testid="RatingCard">
       <VStack align={'center'} gap={'8'}>
         <Text title={starsCount ? t('Спвасибо за оценку!') : title} />
-        <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStar} />
+        <StarRating
+          selectedStars={starsCount}
+          size={40}
+          onSelect={onSelectStar}
+        />
       </VStack>
       <BrowserView>
         <Modal isOpen={isModalOpen} lazy>
@@ -92,10 +93,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
               >
                 {t('Закрыть')}
               </Button>
-              <Button
-                onClick={acceptHandle}
-                data-testid="RatingCard.Send"
-              >
+              <Button onClick={acceptHandle} data-testid="RatingCard.Send">
                 {t('Отправить')}
               </Button>
             </HStack>

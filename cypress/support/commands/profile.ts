@@ -1,4 +1,4 @@
-import {User} from "../../../src/entities/User";
+import { User } from '../../../src/entities/User';
 
 export const updateProfile = (firstname: string, lastname: string) => {
   cy.getByTestId('EditableProfileCardHeader.EditButton').click();
@@ -13,15 +13,16 @@ export const resetProfile = (profileId: string) => {
     url: `http://localhost:8000/profile/${profileId}`,
     headers: { Authorization: 'dvfdvd' },
     body: {
-      "id": "4",
-      "first": "test",
-      "lastname": "user",
-      "age": 465,
-      "currency": "EUR",
-      "country": "Ukraine",
-      "city": "Moscow",
-      "username": "testuser",
-      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+      id: '4',
+      first: 'test',
+      lastname: 'user',
+      age: 465,
+      currency: 'EUR',
+      country: 'Ukraine',
+      city: 'Moscow',
+      username: 'testuser',
+      avatar:
+        'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg',
     },
   });
 };

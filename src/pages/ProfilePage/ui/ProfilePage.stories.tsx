@@ -1,11 +1,11 @@
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import {ThemeDecorator} from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import ProfilePage from "./ProfilePage";
-import {StoreDecorator} from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
-import {Country} from "@/entities/Country";
-import {Currency} from "@/entities/Currency";
-import {Theme} from "@/shared/const/theme";
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import ProfilePage from './ProfilePage';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import { Theme } from '@/shared/const/theme';
 
 export default {
   title: 'pages/ProfilePage',
@@ -15,38 +15,43 @@ export default {
   },
 } as ComponentMeta<typeof ProfilePage>;
 
-const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />;
+const Template: ComponentStory<typeof ProfilePage> = (args) => (
+  <ProfilePage {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [StoreDecorator({
-  profile: {
-    form: {
-      username: 'admin',
-      age: 22,
-      country: Country.Kazakhstan,
-      lastname: 'Nazarbaev',
-      first: 'Nurik',
-      city: 'Astana',
-      currency: Currency.EUR,
-    }
-  }
-})];
-
+Normal.decorators = [
+  StoreDecorator({
+    profile: {
+      form: {
+        username: 'admin',
+        age: 22,
+        country: Country.Kazakhstan,
+        lastname: 'Nazarbaev',
+        first: 'Nurik',
+        city: 'Astana',
+        currency: Currency.EUR,
+      },
+    },
+  }),
+];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-  profile: {
-    form: {
-      username: 'admin',
-      age: 22,
-      country: Country.Kazakhstan,
-      lastname: 'Nazarbaev',
-      first: 'Nurik',
-      city: 'Astana',
-      currency: Currency.EUR,
-    }
-  }
-})];
-
+Dark.decorators = [
+  ThemeDecorator(Theme.DARK),
+  StoreDecorator({
+    profile: {
+      form: {
+        username: 'admin',
+        age: 22,
+        country: Country.Kazakhstan,
+        lastname: 'Nazarbaev',
+        first: 'Nurik',
+        city: 'Astana',
+        currency: Currency.EUR,
+      },
+    },
+  }),
+];

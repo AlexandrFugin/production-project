@@ -1,14 +1,18 @@
-import {componentRender} from "@/shared/lib/tests/componentRender/componentRender";
-import AppRouter from "./AppRouter";
-import {getRouteAbout, getRouteProfile, getRouteAdmin} from "@/shared/const/router";
-import {screen} from "@testing-library/react";
-import {UserRole} from "@/entities/User";
+import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
+import AppRouter from './AppRouter';
+import {
+  getRouteAbout,
+  getRouteProfile,
+  getRouteAdmin,
+} from '@/shared/const/router';
+import { screen } from '@testing-library/react';
+import { UserRole } from '@/entities/User';
 
 describe('app/router/AppRouter', function () {
   test('Страница должна отрендериться', async () => {
     componentRender(<AppRouter />, {
       route: getRouteAbout(),
-    })
+    });
 
     const page = await screen.findByTestId('AboutPage');
     expect(page).toBeInTheDocument();
@@ -17,7 +21,7 @@ describe('app/router/AppRouter', function () {
   test('Страница не найдена', async () => {
     componentRender(<AppRouter />, {
       route: '/dvfdbgbgv',
-    })
+    });
 
     const page = await screen.findByTestId('NotFoundPage');
     expect(page).toBeInTheDocument();
@@ -26,7 +30,7 @@ describe('app/router/AppRouter', function () {
   test('Редирект неавторизованного пользователя на главную', async () => {
     componentRender(<AppRouter />, {
       route: getRouteProfile('1'),
-    })
+    });
 
     const page = await screen.findByTestId('MainPage');
     expect(page).toBeInTheDocument();
@@ -36,11 +40,13 @@ describe('app/router/AppRouter', function () {
     componentRender(<AppRouter />, {
       route: getRouteProfile('1'),
       initialState: {
-        user: {_inited: true, authData: {}}
-      }
-    })
+        user: { _inited: true, authData: {} },
+      },
+    });
 
-    const page = await screen.findByTestId('ProfilePage', undefined, {timeout: 3000});
+    const page = await screen.findByTestId('ProfilePage', undefined, {
+      timeout: 3000,
+    });
     expect(page).toBeInTheDocument();
   });
 
@@ -48,9 +54,9 @@ describe('app/router/AppRouter', function () {
     componentRender(<AppRouter />, {
       route: getRouteAdmin(),
       initialState: {
-        user: {_inited: true, authData: {}}
-      }
-    })
+        user: { _inited: true, authData: {} },
+      },
+    });
 
     const page = await screen.findByTestId('ForbiddenPage');
     expect(page).toBeInTheDocument();
@@ -60,11 +66,11 @@ describe('app/router/AppRouter', function () {
     componentRender(<AppRouter />, {
       route: getRouteAdmin(),
       initialState: {
-        user: {_inited: true, authData: {roles: [UserRole.ADMIN]}}
-      }
-    })
+        user: { _inited: true, authData: { roles: [UserRole.ADMIN] } },
+      },
+    });
 
     const page = await screen.findByTestId('AdminPanelPage');
     expect(page).toBeInTheDocument();
   });
-})
+});
