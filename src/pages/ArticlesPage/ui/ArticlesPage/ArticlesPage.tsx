@@ -16,6 +16,7 @@ import { initArticlesPage } from '../../model/services/initArticlesPage/initArti
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 import { useSearchParams } from 'react-router-dom';
 import { ArticlesInfiniteList } from '../../ui/ArticlesInfiniteList/ArticlesInfiniteList';
+import { ArticlePageGreeting } from '@/features/articlePageGreeting';
 
 interface ArticlesPageProps {
   className?: string;
@@ -176,6 +177,7 @@ const ArticlesPage = ({ className, virtualized }: ArticlesPageProps) => {
       >
         <ArticlesPageFilters />
         <ArticlesInfiniteList className={cls.list} />
+        <ArticlePageGreeting />
       </Page>
     </DynamicModuleLoader>
   );
