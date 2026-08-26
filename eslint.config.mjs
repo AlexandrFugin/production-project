@@ -83,6 +83,7 @@ export default defineConfig([
             'border',
             'direction',
             'gap',
+            'feature',
           ],
         },
       ],
