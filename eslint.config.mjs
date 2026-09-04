@@ -84,6 +84,8 @@ export default defineConfig([
             'direction',
             'gap',
             'feature',
+            'color',
+            'variant',
           ],
         },
       ],
