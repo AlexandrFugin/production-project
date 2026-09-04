@@ -7,10 +7,6 @@ interface OverlayProps {
   onClick?: () => void;
 }
 
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
 // eslint-disable-next-line react/display-name
 export const Overlay = memo((props: OverlayProps) => {
   const { className, onClick } = props;
