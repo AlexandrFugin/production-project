@@ -36,7 +36,7 @@ const article: Article = {
 
 export const Normal = Template.bind({});
 Normal.args = {
-  virtualized: false,
+  // virtualized: false,
 };
 Normal.decorators = [
   StoreDecorator(

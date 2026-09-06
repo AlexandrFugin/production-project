@@ -1,6 +1,6 @@
+import { HTMLAttributes, memo, ReactNode } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Card.module.scss';
-import { HTMLAttributes, memo, ReactNode } from 'react';
 
 export type CardVariant = 'normal' | 'outlined' | 'light';
 export type CardPadding = '0' | '8' | '16' | '24';
@@ -11,7 +11,6 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   variant?: CardVariant;
   max?: boolean;
-  withoutPaddings?: boolean;
   padding?: CardPadding;
   border?: CardBorder;
 }
