@@ -8,6 +8,7 @@ import React, {
 } from 'react';
 
 export type ButtonVariant = 'clear' | 'outline' | 'filled';
+export type ButtonColor = 'normal' | 'success' | 'error';
 
 export type ButtonSize = 'm' | 'l' | 'xl';
 
@@ -37,6 +38,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
    * Увеличивает кнопку на всю свободную ширину
    */
   fullWidth?: boolean;
+  color?: ButtonColor;
   addonLeft?: ReactElement;
   addonRight?: ReactElement;
 }
@@ -51,6 +53,7 @@ export const Button = memo((props: ButtonProps) => {
     size = 'm',
     disabled,
     fullWidth,
+    color = 'normal',
     addonLeft,
     addonRight,
     ...otherProps
@@ -69,6 +72,7 @@ export const Button = memo((props: ButtonProps) => {
         className,
         cls[variant],
         cls[size],
+        cls[color],
       ])}
       disabled={disabled}
       {...otherProps}
