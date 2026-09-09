@@ -25,7 +25,7 @@ import {
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { VStack } from '@/shared/ui/redesigned/Stack';
-import { useForceUpdate } from '@/shared/render/forceUpdate';
+import { useForceUpdate } from '@/shared/lib/render/forceUpdate';
 
 export interface LoginFormProps {
   className?: string;
