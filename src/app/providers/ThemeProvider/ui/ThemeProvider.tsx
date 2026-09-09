@@ -22,7 +22,11 @@ const ThemeProvider = (props: ThemeProviderProps) => {
       setTheme(defaultTheme);
       setThemeInited(true);
     }
-  }, [defaultTheme, isThemeInited]);
+  }, [defaultTheme, isThemeInited, theme]);
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
 
   const defaultProps = useMemo(
     () => ({
