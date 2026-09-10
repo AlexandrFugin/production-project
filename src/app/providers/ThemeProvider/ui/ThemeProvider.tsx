@@ -21,11 +21,11 @@ const ThemeProvider = (props: ThemeProviderProps) => {
   );
 
   useEffect(() => {
-    if (!isThemeInited && defaultTheme) {
-      setTheme(defaultTheme);
+    if (!isThemeInited && initialTheme) {
+      setTheme(initialTheme);
       setThemeInited(true);
     }
-  }, [defaultTheme, isThemeInited, theme]);
+  }, [initialTheme, isThemeInited]);
 
   useEffect(() => {
     document.body.className = theme;
